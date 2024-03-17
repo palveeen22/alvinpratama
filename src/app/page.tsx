@@ -9,8 +9,8 @@ import { MotionArticle, MotionDiv, MotionSection } from '@/components/MotionClie
 import SelfInfo from '@/data/SelfInfo';
 import Icons from '@/components/ui/Icons';
 import BlogCard from '@/components/ui/BlogCard';
-import { allPosts, projects } from '@/types';
 import ProjectCard from '@/components/ui/ProjectCard';
+import { allPosts, projects } from '@/data';
 
 
 const sectionVariants = {

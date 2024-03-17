@@ -1,8 +1,7 @@
 import React from 'react'
 import { MotionArticle, MotionDiv, MotionSection } from '@/components/MotionClient'
-import { project } from '@/data';
+import { project, projects } from '@/data';
 import Link from 'next/link';
-import { projects } from '@/types';
 import ProjectCard from '@/components/ui/ProjectCard';
 
 
