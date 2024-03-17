@@ -15,12 +15,12 @@ export const NAV_MENU_LINK = [
     path: '/about',
   },
   {
-    label: 'Blog',
-    path: '/blogs',
-  },
-  {
     label: 'Projects',
     path: '/projects',
+  },
+  {
+    label: 'Blog',
+    path: '/blogs',
   },
 ]
 

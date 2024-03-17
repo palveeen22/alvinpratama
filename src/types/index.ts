@@ -11,5 +11,7 @@ export const allPosts = [
 ];
 
 export const projects = [
+	{ url: "string", title: "string", stacks: ["text", "test", "textt"] },
 	{ url: "string", title: "string", stacks: ["text", "test", "textt"]},
+	
 ];
