@@ -18,3 +18,7 @@ export default function formatDate(inputDateString: string) {
 
   return `${formattedDay}/${formattedMonth}/${year}`
 }
+
+
+export const formatStacks = (values: string[]) =>
+    values.toString().replaceAll(',', ' • ')

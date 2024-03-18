@@ -6,11 +6,12 @@
 import Link from 'next/link'
 // import { allPosts } from 'contentlayer/generated'
 import { MotionArticle, MotionDiv, MotionSection } from '@/components/MotionClient'
-import SelfInfo from '@/data/SelfInfo';
+import { SelfInfo, projectsData } from '@/data/data';
 import Icons from '@/components/ui/Icons';
 import BlogCard from '@/components/ui/BlogCard';
 import ProjectCard from '@/components/ui/ProjectCard';
 import { allPosts, projects } from '@/data';
+import Project from '@/components/ui/Project';
 
 
 const sectionVariants = {
@@ -82,7 +83,7 @@ export default function Home() {
         </MotionDiv>
       </MotionArticle>
 
-      <MotionArticle
+      {/* <MotionArticle
         className='flex flex-col gap-6'
         variants={sectionVariants}
       >
@@ -100,13 +101,21 @@ export default function Home() {
           className='flex flex-col w-full gap-4'
           variants={containerVariants}
         >
-          {projects.map((project, idx) => (
-            <MotionDiv key={idx} variants={cardVariants}>
-              <ProjectCard project={project} />
-            </MotionDiv>
-          ))}
+
         </MotionDiv>
-      </MotionArticle>
+      </MotionArticle> */}
     </MotionSection>
   )
 }
+
+
+{/* {projectsData.map((project, idx) => (
+            <MotionDiv key={idx} variants={cardVariants}>
+              <ProjectCard project={project} />
+            </MotionDiv>
+          ))} */}
+{/* {projectsData.map((project, idx) => (
+            <MotionDiv key={idx} variants={cardVariants}>
+              <Project project={project} />
+            </MotionDiv>
+          ))} */}
