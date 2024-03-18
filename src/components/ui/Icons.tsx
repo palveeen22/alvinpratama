@@ -4,23 +4,23 @@ import Link from 'next/link'
 const SOCIAL_LINKS = [
     {
         name: 'Github ',
-        url: 'https://github.com/rhmnaulia',
+        url: 'https://github.com/palveeen22',
         icon: <Github size={28} />,
     },
     {
         name: 'Telegram',
-        url: 'https://twitter.com/rhmnaul',
+        url: 'https://t.me/alvinmacaronnie',
         icon: <Send size={28} />,
     },
 
     {
         name: 'LinkedIn ',
-        url: 'https://linkedin.com/in/rhmnaulia',
+        url: 'https://www.linkedin.com/in/alvin-pratama-1a046424b/',
         icon: <Linkedin size={28} />,
     },
     {
         name: 'Instagram ',
-        url: 'https://instagram.com/rhmnaulia',
+        url: 'https://instagram.com/alvinjustkidding',
         icon: <Instagram size={28} />,
     },
 ]

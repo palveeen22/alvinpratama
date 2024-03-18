@@ -64,7 +64,7 @@ export default function Home() {
           <h3 className='text-lg'>Latest posts</h3>
           <Link
             className='text-foreground/80 hover:text-foreground/90 underline decoration-wavy text-sm hover:decoration-foreground/80 decoration-foreground/60 underline-offset-8'
-            href='/blog'
+            href='/blogs'
             target='_self'
           >
             See all posts
@@ -90,7 +90,7 @@ export default function Home() {
           <h3 className='text-lg'>Latest projects</h3>
           <Link
             className='text-foreground/80 hover:text-foreground/90 underline text-sm decoration-wavy hover:decoration-foreground/80 decoration-foreground/60 underline-offset-8'
-            href='https://github.com/rhmnaulia'
+            href='https://github.com/palveeen22'
             target='_blank'
           >
             See all projects

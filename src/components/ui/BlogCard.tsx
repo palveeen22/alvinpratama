@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Card, CardDescription, CardHeader, CardTitle } from './card'
+import formatDate from '@/lib/utils'
 // import formatDate from '@/lib/formatDate'
 
 type TBlogCardProps = {
@@ -14,7 +15,7 @@ type TBlogCardProps = {
 const BlogCard = ({ post }: TBlogCardProps) => {
     return (
         <Link
-            href={`/blog/${post.slug}`}
+            href={`/blogs/${post.slug}`}
             className='transition-all duration-300 hover:-translate-y-2 w-full'
         >
             <Card>
@@ -23,7 +24,7 @@ const BlogCard = ({ post }: TBlogCardProps) => {
                         <CardTitle className='text-base line-clamp-1'>
                             {post.title}
                         </CardTitle>
-                        {/* <p className='text-sm'>{formatDate(post.date)}</p> */}
+                        <p className='text-sm'>{formatDate(post.date)}</p>
                     </span>
                     <CardDescription className='text-sm line-clamp-2'>
                         {post.description}
