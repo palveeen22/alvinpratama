@@ -6,6 +6,14 @@ type TBlogs = {
 
 type TProjectCardProps = {
     project: {
+        url: string
+        title: string
+        stacks: string[]
+    }
+}
+
+type TProjectDetail = {
+    project: {
         image: string
         url: string
         title: string

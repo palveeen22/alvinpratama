@@ -10,7 +10,10 @@ export const allPosts = [
 ];
 
 export const projects = [
-	{ url: "string", title: "string", stacks: ["text", "test", "textt"] },
-	{ url: "string", title: "string", stacks: ["text", "test", "textt"]},
-	
+	{ url: "string", title: "WaterHub",  stacks: ["text", "test", "textt"] },
+	{ url: "string", title: "Pintar Ai",  stacks: ["text", "test", "textt"] },
+	{ url: "string", title: "Pesanaja", stacks: ["text", "test", "textt"] },
+	{ url: "string", title: "WebcamToy", stacks: ["text", "test", "textt"] },
+	{ url: "string", title: "Turun Tangan", stacks: ["text", "test", "textt"]},
+	{ url: "string", title: "Belinsky Studio", stacks: ["text", "test", "textt"]},
 ];

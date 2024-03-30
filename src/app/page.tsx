@@ -1,10 +1,4 @@
-// import PostCard from '@/components/PostCard'
-// import ProjectCard from '@/components/ProjectCard'
-// import Socials from '@/components/Socials'
-// import presentation from '@/data/presentation'
-// import projects from '@/data/projects'
 import Link from 'next/link'
-// import { allPosts } from 'contentlayer/generated'
 import { MotionArticle, MotionDiv, MotionSection } from '@/components/MotionClient'
 import { SelfInfo, projectsData } from '@/data/data';
 import Icons from '@/components/ui/Icons';
@@ -37,7 +31,7 @@ const containerVariants = {
 export default function Home() {
   return (
     <MotionSection
-      className='w-full flex flex-col gap-14 md:gap-20 flex-grow'
+      className='w-full flex flex-col justify-center gap-14 md:gap-20 flex-grow'
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -57,7 +51,7 @@ export default function Home() {
         </span>
       </MotionArticle>
 
-      <MotionArticle
+      {/* <MotionArticle
         className='flex flex-col gap-6'
         variants={sectionVariants}
       >
@@ -81,7 +75,7 @@ export default function Home() {
             </MotionDiv>
           ))}
         </MotionDiv>
-      </MotionArticle>
+      </MotionArticle> */}
 
       {/* <MotionArticle
         className='flex flex-col gap-6'
