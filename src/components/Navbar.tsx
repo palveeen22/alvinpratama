@@ -10,10 +10,10 @@ export const NAV_MENU_LINK = [
     label: 'Home',
     path: '/',
   },
-  {
-    label: 'About',
-    path: '/about',
-  },
+  // {
+  //   label: 'About',
+  //   path: '/about',
+  // },
   {
     label: 'Projects',
     path: '/projects',

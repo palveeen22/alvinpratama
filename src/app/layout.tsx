@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   },
   description: 'Software Engineer',
 
+
   robots: {
     index: true,
     follow: true,
@@ -44,7 +45,7 @@ export default function RootLayout({
     <html className={cx(GeistSans.variable, GeistMono.variable)} lang='en'>
       <body>
         <ThemeProvider attribute='class' enableSystem disableTransitionOnChange>
-          <main className='mx-auto flex min-h-screen max-w-[1280px] flex-col flex-wrap gap-10 px-6 md:py-12 py-8 md:gap-16'>
+          <main className='mx-auto flex min-h-screen max-w-[1280px] flex-col flex-wrap gap-10 px-6 md:py-12 py-4 md:gap-16'>
             <Navbar />
             {children}
             <Footer />

@@ -2,10 +2,7 @@ import Link from 'next/link'
 import { MotionArticle, MotionDiv, MotionSection } from '@/components/MotionClient'
 import { SelfInfo, projectsData } from '@/data/data';
 import Icons from '@/components/ui/Icons';
-import BlogCard from '@/components/ui/BlogCard';
-import ProjectCard from '@/components/ui/ProjectCard';
 import { allPosts, projects } from '@/data';
-import Project from '@/components/ui/Project';
 
 
 const sectionVariants = {
@@ -40,76 +37,16 @@ export default function Home() {
         className='flex flex-col gap-4'
         variants={sectionVariants}
       >
-        <h1 className='text-2xl dark:text-foreground/100 font-bold text-pretty'>
+        <h1 className='text-4xl dark:text-foreground/100 font-bold text-pretty'>
           {SelfInfo.title}
         </h1>
-        <p className='break-words dark:text-foreground/80 text-pretty'>
+        <p className='text-xl break-words dark:text-foreground/80 text-pretty text-justify'>
           {SelfInfo.description}
         </p>
         <span className='mt-1'>
           <Icons />
         </span>
       </MotionArticle>
-
-      {/* <MotionArticle
-        className='flex flex-col gap-6'
-        variants={sectionVariants}
-      >
-        <header className='flex w-full flex-row items-center justify-between gap-2'>
-          <h3 className='text-lg'>Latest posts</h3>
-          <Link
-            className='text-foreground/80 hover:text-foreground/90 underline decoration-wavy text-sm hover:decoration-foreground/80 decoration-foreground/60 underline-offset-8'
-            href='/blogs'
-            target='_self'
-          >
-            See all posts
-          </Link>
-        </header>
-        <MotionDiv
-          className='flex flex-col md:flex-row gap-4 justify-between'
-          variants={containerVariants}
-        >
-          {allPosts.slice(0, 2).map((post, index) => (
-            <MotionDiv key={index} variants={cardVariants}>
-              <BlogCard post={post} />
-            </MotionDiv>
-          ))}
-        </MotionDiv>
-      </MotionArticle> */}
-
-      {/* <MotionArticle
-        className='flex flex-col gap-6'
-        variants={sectionVariants}
-      >
-        <header className='flex w-full flex-row items-center justify-between gap-2'>
-          <h3 className='text-lg'>Latest projects</h3>
-          <Link
-            className='text-foreground/80 hover:text-foreground/90 underline text-sm decoration-wavy hover:decoration-foreground/80 decoration-foreground/60 underline-offset-8'
-            href='https://github.com/palveeen22'
-            target='_blank'
-          >
-            See all projects
-          </Link>
-        </header>
-        <MotionDiv
-          className='flex flex-col w-full gap-4'
-          variants={containerVariants}
-        >
-
-        </MotionDiv>
-      </MotionArticle> */}
     </MotionSection>
   )
 }
-
-
-{/* {projectsData.map((project, idx) => (
-            <MotionDiv key={idx} variants={cardVariants}>
-              <ProjectCard project={project} />
-            </MotionDiv>
-          ))} */}
-{/* {projectsData.map((project, idx) => (
-            <MotionDiv key={idx} variants={cardVariants}>
-              <Project project={project} />
-            </MotionDiv>
-          ))} */}
