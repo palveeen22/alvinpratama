@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import { ToogleMode } from './ToogleMode'
 import { ToogleLanguages } from './ToogleLanguages'
-import { NAV_MENU_LINK } from '@/data'
+import { NAV_MENU_LINK, getLocalizedNavMenuLinks } from '@/data'
 
 
 
@@ -13,10 +13,13 @@ const Navbar = () => {
   if (pathname.includes('/blog/')) {
     pathname = '/blog'
   }
+
+  const navMenuLinks = getLocalizedNavMenuLinks();
+
   return (
     <header className='z-40 flex w-full gap-2 flex-row justify-between items-center'>
       <nav className='flex items-center gap-8'>
-        {NAV_MENU_LINK.map((menu, index) => (
+        {navMenuLinks.map((menu, index) => (
           <Link
             key={index}
             href={menu.href}

@@ -1,36 +1,35 @@
 import type { Dictionary } from "@/types";
-
+import { useLocale } from "next-intl";
 
 export const project = {
     title: "Projects",
     pharagraph: "Some things that I've created during my learning journey...."
 }
 
-// export const NAVBAR_OPTIONS: { label: keyof Dictionary["navbar"]; href: string }[] = [
-//   { label: "home", href: "/" },
-//   { label: "about", href: "/about" },
-//   { label: "portfolio", href: "/portfolio" },
-//   { label: "contactUs", href: "/contact" },
-// ];
-
-export const NAV_MENU_LINK: { label: keyof Dictionary["navbar"]; href: string }[] = [
+export const NAV_MENU_LINK = [
   {
-    label: 'home',
+    label: 'Home',
     href: '/',
   },
-  // {
-  //   label: 'About',
-  //   href: '/about',
-  // },
   {
-    label: 'projects',
+    label: 'Projects',
     href: '/projects',
   },
   {
-    label: 'blog',
+    label: 'Blog',
     href: '/blogs',
   },
-]
+];
+
+export function getLocalizedNavMenuLinks(): typeof NAV_MENU_LINK {
+  const locale = useLocale();
+  
+  return NAV_MENU_LINK.map((link) => ({
+    ...link,
+    href: `/${locale}${link.href}`,
+  }));
+}
+
 
 export const allPosts = [
 	{ description: "testx", title: "blabla", date: "2024/12/1", slug:"content-security-policy" },

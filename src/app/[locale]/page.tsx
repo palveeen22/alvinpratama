@@ -1,11 +1,7 @@
-// import Link from 'next/link'
-import { MotionArticle, MotionDiv, MotionSection } from '@/components/MotionClient'
-import { SelfInfo, projectsData } from '@/data/data';
+import { MotionArticle, MotionSection } from '@/components/MotionClient'
+import { SelfInfo } from '@/data/data';
 import Icons from '@/components/ui/Icons';
-// import { allPosts, projects } from '@/data';
 import { useTranslations } from 'next-intl';
-
-
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -28,8 +24,7 @@ const containerVariants = {
 };
 
 export default function Home() {
-  const t = useTranslations("Index")
-  // < h1 > { t("title") }</>
+  const t = useTranslations("selfInfo")
 
   return (
     <MotionSection
@@ -43,16 +38,15 @@ export default function Home() {
         variants={sectionVariants}
       >
         <h1 className='text-4xl dark:text-foreground/100 font-bold text-pretty'>
-          {SelfInfo.title}
+          {t('title')}
         </h1>
         <p className='text-xl break-words dark:text-foreground/80 text-pretty text-justify'>
-          {SelfInfo.description}
+          {t('description')}
         </p>
         <span className='mt-1'>
           <Icons />
         </span>
       </MotionArticle>
-      <h1> {t("title")}</h1>
     </MotionSection>
   )
 }
