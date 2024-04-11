@@ -3,7 +3,7 @@ export const en = {
   navbar: {
     home: "Home",
     about: "About",
-    portfolio: "Portfolio",
-    contactUs: "Contact Us",
+    projects: "Projects",
+    blog:"Blogs"
   },
 };

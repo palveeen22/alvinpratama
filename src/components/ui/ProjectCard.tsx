@@ -2,6 +2,7 @@ import { ExternalLink } from 'lucide-react'
 import { Card, CardTitle } from './card'
 import Link from 'next/link'
 import { formatStacks } from '@/lib/utils'
+import { TProjectCardProps } from '@/types'
 
 
 

@@ -4,25 +4,9 @@ import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import { ToogleMode } from './ToogleMode'
 import { ToogleLanguages } from './ToogleLanguages'
+import { NAV_MENU_LINK } from '@/data'
 
-export const NAV_MENU_LINK = [
-  {
-    label: 'Home',
-    path: '/',
-  },
-  // {
-  //   label: 'About',
-  //   path: '/about',
-  // },
-  {
-    label: 'Projects',
-    path: '/projects',
-  },
-  {
-    label: 'Blog',
-    path: '/blogs',
-  },
-]
+
 
 const Navbar = () => {
   let pathname = usePathname()
@@ -35,9 +19,9 @@ const Navbar = () => {
         {NAV_MENU_LINK.map((menu, index) => (
           <Link
             key={index}
-            href={menu.path}
+            href={menu.href}
             className={cn(
-              pathname === menu.path
+              pathname === menu.href
                 ? 'dark:text-foreground/90 font-medium text-foreground/100 underline decoration-wavy underline-offset-8'
                 : 'dark:text-foreground/60 text-foreground/80 transition-colors hover:text-foreground/100 hover:dark:text-foreground/90'
             )}

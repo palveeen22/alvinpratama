@@ -1,10 +1,18 @@
-type TBlogs = {
+import type { en } from "@/lib/dictionaries/en";
+import type { LANGS } from "@/lib/internationalizations";
+
+
+export type Lang = (typeof LANGS)[number];
+export type Dictionary = typeof en;
+export type DictionaryKey = keyof typeof en;
+
+export type TBlogs = {
 	details: string
 	title: string,
 	date: string,
 };
 
-type TProjectCardProps = {
+export type TProjectCardProps = {
     project: {
         url: string
         title: string
@@ -12,7 +20,7 @@ type TProjectCardProps = {
     }
 }
 
-type TProjectDetail = {
+export type TProjectDetail = {
     project: {
         image: string
         url: string
@@ -21,3 +29,4 @@ type TProjectDetail = {
         stacks: string[]
     }
 }
+
