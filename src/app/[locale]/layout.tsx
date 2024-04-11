@@ -12,7 +12,7 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://rahmanaulia.com'),
+  metadataBase: new URL('https://alvinpratama.com'),
   title: {
     default: 'Alvin Pratama',
     template: '%s | Alvin Pratama',
