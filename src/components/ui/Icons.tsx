@@ -20,7 +20,7 @@ const SOCIAL_LINKS = [
     },
     {
         name: 'Instagram ',
-        url: 'https://instagram.com/alvinjustkidding',
+        url: 'https://instagram.com/alvinnnprtm_',
         icon: <Instagram size={28} />,
     },
 ]

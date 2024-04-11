@@ -1,8 +1,10 @@
-import Link from 'next/link'
+// import Link from 'next/link'
 import { MotionArticle, MotionDiv, MotionSection } from '@/components/MotionClient'
 import { SelfInfo, projectsData } from '@/data/data';
 import Icons from '@/components/ui/Icons';
-import { allPosts, projects } from '@/data';
+// import { allPosts, projects } from '@/data';
+import { useTranslations } from 'next-intl';
+
 
 
 const sectionVariants = {
@@ -26,6 +28,9 @@ const containerVariants = {
 };
 
 export default function Home() {
+  const t = useTranslations("Index")
+  // < h1 > { t("title") }</>
+
   return (
     <MotionSection
       className='w-full flex flex-col justify-center gap-14 md:gap-20 flex-grow'
@@ -47,6 +52,7 @@ export default function Home() {
           <Icons />
         </span>
       </MotionArticle>
+      <h1> {t("title")}</h1>
     </MotionSection>
   )
 }
