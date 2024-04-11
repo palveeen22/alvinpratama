@@ -1,10 +1,12 @@
 import type { Dictionary } from "@/types";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 export const project = {
     title: "Projects",
     pharagraph: "Some things that I've created during my learning journey...."
 }
+
+// const t = useTranslations("selfInfo")
 
 export const NAV_MENU_LINK = [
   {

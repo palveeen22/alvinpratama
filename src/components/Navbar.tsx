@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import { ToogleMode } from './ToogleMode'
 import { ToogleLanguages } from './ToogleLanguages'
-import { NAV_MENU_LINK, getLocalizedNavMenuLinks } from '@/data'
+import { getLocalizedNavMenuLinks } from '@/data'
 
 
 
