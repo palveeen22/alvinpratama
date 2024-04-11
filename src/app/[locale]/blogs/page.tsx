@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import { MotionSection } from '@/components/MotionClient'
 import { useTranslations } from 'next-intl';
