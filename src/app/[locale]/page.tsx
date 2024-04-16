@@ -1,5 +1,4 @@
 import { MotionArticle, MotionSection } from '@/components/MotionClient'
-import { SelfInfo } from '@/data/data';
 import Icons from '@/components/ui/Icons';
 import { useTranslations } from 'next-intl';
 
