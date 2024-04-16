@@ -24,7 +24,7 @@ const containerVariants = {
     },
 };
 
-const page = () => {
+const BlogPage = () => {
     const t = useTranslations("coming")
 
     return (
@@ -39,4 +39,4 @@ const page = () => {
     )
 }
 
-export default page
+export default BlogPage

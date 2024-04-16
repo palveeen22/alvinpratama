@@ -1,6 +1,6 @@
 import React from 'react'
 
-const page = () => {
+const AboutPage = () => {
     return (
         <section>
             <article
@@ -17,4 +17,4 @@ const page = () => {
     )
 }
 
-export default page
+export default AboutPage

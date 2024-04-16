@@ -26,7 +26,7 @@ const containerVariants = {
     },
 };
 
-const page = () => {
+const ProjectPage = () => {
     return (
         <MotionSection
             className='w-full flex flex-col gap-14 md:gap-20 flex-grow'
@@ -74,4 +74,4 @@ const page = () => {
     )
 }
 
-export default page
+export default ProjectPage
