@@ -3,6 +3,7 @@ import { Card, CardTitle } from './card'
 import Link from 'next/link'
 import { formatStacks } from '@/lib/utils'
 import Image from 'next/image'
+import { TProjectCardProps } from '@/types'
 
 
 
