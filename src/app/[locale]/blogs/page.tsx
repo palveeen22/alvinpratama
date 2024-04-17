@@ -34,7 +34,9 @@ const BlogPage = () => {
             initial="hidden"
             animate="visible"
         >
-            {t("text")}
+            <h1 className='flex justify-center items-center text-5xl'>
+                {t("text")}
+            </h1>
         </MotionSection>
     )
 }
