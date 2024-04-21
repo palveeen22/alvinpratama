@@ -6,7 +6,6 @@ import { formatStacks } from '@/lib/utils'
 import { TProjectCardProps } from '@/types'
 import {
     AlertDialog,
-    AlertDialogAction,
     AlertDialogCancel,
     AlertDialogContent,
     AlertDialogDescription,
