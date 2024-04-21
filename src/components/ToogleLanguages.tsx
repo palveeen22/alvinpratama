@@ -6,7 +6,7 @@ import {
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
-} from './Dropdown';
+} from './ui/Dropdown';
 import { useRouter } from 'next/navigation';
 import { useLocale } from 'next-intl';
 import { Languages } from 'lucide-react';

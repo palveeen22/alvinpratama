@@ -3,6 +3,7 @@ import { MotionArticle, MotionDiv, MotionSection } from '@/components/MotionClie
 import { project, projects } from '@/data';
 import Link from 'next/link';
 import ProjectCard from '@/components/ui/ProjectCard';
+import { useTranslations } from 'next-intl';
 
 
 
@@ -27,6 +28,8 @@ const containerVariants = {
 };
 
 const ProjectPage = () => {
+    const t = useTranslations("projectInfo")
+
     return (
         <MotionSection
             className='w-full flex flex-col gap-14 md:gap-20 flex-grow'
@@ -39,10 +42,10 @@ const ProjectPage = () => {
                 variants={sectionVariants}
             >
                 <h1 className='text-5xl dark:text-foreground/100 font-bold text-pretty'>
-                    {project.title}
+                    {t("header")}
                 </h1>
                 <p className='text-xl break-words dark:text-foreground/80 text-pretty'>
-                    {project.pharagraph}
+                    {t("desc")}
                 </p>
             </MotionArticle>
             <MotionArticle
@@ -50,13 +53,13 @@ const ProjectPage = () => {
                 variants={sectionVariants}
             >
                 <header className='flex w-full flex-row items-center justify-between gap-2'>
-                    <h3 className='text-lg'>Latest projects</h3>
+                    <h3 className='text-lg'>{t("lastProject")}</h3>
                     <Link
                         className='text-foreground/80 hover:text-foreground/90 underline text-sm decoration-wavy hover:decoration-foreground/80 decoration-foreground/60 underline-offset-8'
                         href='https://github.com/palveeen22'
                         target='_blank'
                     >
-                        See all projects
+                        {t("seeAll")}
                     </Link>
                 </header>
                 <MotionDiv

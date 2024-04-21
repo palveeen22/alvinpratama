@@ -11,7 +11,7 @@ import {
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
-} from './Dropdown'
+} from './ui/Dropdown'
 
 export function ToogleMode() {
     const { setTheme } = useTheme()

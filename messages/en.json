@@ -8,7 +8,13 @@
 		"title": "Hey I’m Alvin 🕺🏻",
 		"description": "I'm a Software Engineer with expertise in Frontend and Mobile App Development. Passionate about user experience, infrastructure as code and cloud solutions. Driven to make quality code which is clean, well tested, and maintainable. Committed to constant learning and skill enhancement in new technologies and programming languages."
 	},
-	"coming":{
-		"text":"Coming Soon..."
+	"coming": {
+		"text": "Coming Soon..."
+	},
+	"projectInfo": {
+		"header": "Projects",
+		"desc": "Some things that I've created during my learning journey....",
+		"lastProject":"Latest projects",
+        "seeAll":"See all projects"
 	}
 }

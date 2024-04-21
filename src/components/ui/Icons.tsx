@@ -1,4 +1,4 @@
-import { Github, Instagram, Linkedin, Send } from 'lucide-react'
+import { Github, Linkedin, Send, MessageCircle } from 'lucide-react'
 import Link from 'next/link'
 
 const SOCIAL_LINKS = [
@@ -20,8 +20,8 @@ const SOCIAL_LINKS = [
     },
     {
         name: 'Instagram ',
-        url: 'https://instagram.com/alvinnnprtm_',
-        icon: <Instagram size={28} />,
+        url: 'https://wa.me/79370066168',
+        icon: <MessageCircle size={30} />,
     },
 ]
 

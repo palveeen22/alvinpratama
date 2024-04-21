@@ -17,6 +17,7 @@ export type TProjectCardProps = {
         url: string
         title: string
         stacks: string[]
+        desc: string | undefined
     }
 }
 
