@@ -17,13 +17,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const generateMetadata = async (): Promise<Metadata> => {
   const title = statTitle;
-  const description = "Personal website of Alvin Pratama — Software Engineer, tech enthusiast, and sports lover. Discover my projects, articles, and thoughts on web development and technology.";
   const url = getUrl({ path: (await getHeaders()).path });
 
   return await getMetadata({
     title,
-    description,
-    tags: [description],
     openGraphArticle: {
       ogUrl: url
     },
