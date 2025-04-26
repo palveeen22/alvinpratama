@@ -1,7 +1,6 @@
 import React from 'react'
 import { MotionArticle, MotionDiv, MotionSection } from '@/components/MotionClient'
-import { project, projects } from '@/data';
-import Link from 'next/link';
+import { projects } from '@/data';
 import ProjectCard from '@/components/ui/ProjectCard';
 import { useTranslations } from 'next-intl';
 
@@ -41,10 +40,10 @@ const ProjectPage = () => {
                 className='flex flex-col gap-4'
                 variants={sectionVariants}
             >
-                <h1 className='text-5xl dark:text-foreground/100 font-bold text-pretty'>
+                <h1 className='text-3xl md:text-5xl dark:text-foreground/100 font-bold text-pretty'>
                     {t("header")}
                 </h1>
-                <p className='text-xl break-words dark:text-foreground/80 text-pretty'>
+                <p className='text-base md:text-xl break-words dark:text-foreground/80 text-pretty'>
                     {t("desc")}
                 </p>
             </MotionArticle>
@@ -54,16 +53,9 @@ const ProjectPage = () => {
             >
                 <header className='flex w-full flex-row items-center justify-between gap-2'>
                     <h3 className='text-lg'>{t("lastProject")}</h3>
-                    <Link
-                        className='text-foreground/80 hover:text-foreground/90 underline text-sm decoration-wavy hover:decoration-foreground/80 decoration-foreground/60 underline-offset-8'
-                        href='https://github.com/palveeen22'
-                        target='_blank'
-                    >
-                        {t("seeAll")}
-                    </Link>
                 </header>
                 <MotionDiv
-                    className='grid grid-cols-2 gap-4'
+                    className='grid grid-cols-1 lg:grid-cols-2 gap-4'
                     variants={containerVariants}
                 >
                     {projects.map((project, idx) => (

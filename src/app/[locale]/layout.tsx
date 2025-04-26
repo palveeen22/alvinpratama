@@ -7,32 +7,28 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
 import { cx } from 'class-variance-authority'
 import Footer from "@/components/Footer";
+import { getUrl } from "@/lib/urls";
+import { getHeaders } from "@/lib/getHeaders";
+import { getMetadata } from "@/lib/metadata";
+import { statTitle } from "@/data/metakey";
 
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  metadataBase: new URL('https://alvinpratama.com'),
-  title: {
-    default: 'Alvin Pratama',
-    template: '%s | Alvin Pratama',
-  },
-  description: 'Software Engineer',
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+export const generateMetadata = async (): Promise<Metadata> => {
+  const title = statTitle;
+  const description = "Personal website of Alvin Pratama — Software Engineer, tech enthusiast, and sports lover. Discover my projects, articles, and thoughts on web development and technology.";
+  const url = getUrl({ path: (await getHeaders()).path });
+
+  return await getMetadata({
+    title,
+    description,
+    tags: [description],
+    openGraphArticle: {
+      ogUrl: url
     },
-  },
-  twitter: {
-    title: 'Alvin Pratama',
-  },
-}
+  });
+};
 
 interface RootLayout {
   children: React.ReactNode;

@@ -23,7 +23,7 @@ const Navbar = () => {
     },
     {
       label: 'Projects',
-      href: `/${locale}/projects`,
+      href: `/${locale}/latest`,
     },
     {
       label: 'Blog',
