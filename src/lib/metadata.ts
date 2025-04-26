@@ -46,7 +46,8 @@ export const getMetadata = async ({
   const modifiedTitle = title || statTitle;
   const medifiedDescription = description;
   const images = [{
-    url: imageUrl || URLS.ogImage,
+    // url: imageUrl ? `${process.env.NEXT_PUBLIC_BASE_URL}${imageUrl}` : URLS.ogImage,
+    url: "https://www.alvinpratama.com/assets/opengraph.png",
     alt: getMetadataTitle(),
     type: "image/png",
     width: 1200,
@@ -74,7 +75,7 @@ export const getMetadata = async ({
       template: `%s | ${modifiedTitle}`
     },
     keywords: keywords,
-    description: "Personal website of Alvin Pratama — Software Engineer, tech enthusiast, and sports lover. Discover my projects, articles, and thoughts on web development and technology.",
+    description: "I'm a Software Engineer with expertise in Frontend and Mobile App Development. Passionate about user experience, infrastructure as code and cloud solutions. Driven to make quality code which is clean, well tested, and maintainable. Committed to constant learning and skill enhancement in new technologies and programming languages.",
     alternates: {
       canonical: canonicalUrl,
     },
