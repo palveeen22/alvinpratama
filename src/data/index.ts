@@ -1,23 +1,222 @@
 export const project = {
-    title: "Projects",
-    pharagraph: "Some things that I've created during my learning journey...."
+	title: "Projects",
+	pharagraph: "Some things that I've created during my learning journey...."
 }
 
 export const allPosts = [
-	{ description: "testx", title: "blabla", date: "2024/12/1", slug:"content-security-policy" },
-	{ description: "testx", title: "blabla", date: "2024/12/1", slug:"content-security-policy" },
-	{ description: "testx", title: "blabla", date: "2024/12/1", slug:"content-security-policy" },
+	{ description: "testx", title: "blabla", date: "2024/12/1", slug: "content-security-policy" },
+	{ description: "testx", title: "blabla", date: "2024/12/1", slug: "content-security-policy" },
+	{ description: "testx", title: "blabla", date: "2024/12/1", slug: "content-security-policy" },
 ];
 
 export const projects = [
-	{ url: "https://www.waterhub.co.id/", title: "WaterHub",  stacks: ["Dart", "Flutter", "redux", "swift", "kotlin"], desc:"Indonesia's first quota based water refill station." },
-	{ url: "https://github.com/Prevferr/Pintar-Ai-Next-app", title: "Pintar Ai",  stacks: ["Typescript", "react", "nextjs", "tailwindcss", "zustand"], desc:"Web app with Open AI integration, offering keyword-summarized research and project recommendations for investors based on Open AI insights." },
-	{ url: "https://test-verihubs-webcam.vercel.app/", title: "WebcamToy", stacks: ["Typescript", "react", "tailwindcss", "reactwebcam"], desc:"Implemented webcam app with cpturing picture, effect." },
-	{ url: "https://github.com/H8-FSJS-P3S6/gc01-palveeen22", title: "WALKIES", stacks: ["Typescript", "React Native", "tailwindcss", "MongoDB", "Apollo GraphQL", "Redis"], desc:"Walkies is a fictional project that I independently developed, focusing on both appearance and system design. I ensured full responsiveness across all devices, including Android, iOS, and tablets." },
-	{ url: "https://canva-contributor.vercel.app/", title: "Canvalon", stacks: ["Typescript", "ReactJs", "tailwindcss", "Redux", "NodeJs", "SocketIo"], desc:"a full-stack web application called Canva Contribution, incorporating Socket.IO for simultaneous user entry. The platform allows users to collaboratively join sessions and utilize a shared whiteboard for drawing and various other interactions." },
-	{ url: "https://pesanaja-client-react.vercel.app/", title: "Pesanaja", stacks: ["Javascript", "react", "tailwindcss","antdesign", "redux","nodejs"], desc:"A grocery delivery app with Google Maps integration and Xendit payment for seamless online shopping." },
-	{ url: "https://github.com/palveeen22/next-js-fullstack-aliexpress-clone", title: "Aliexpress Ru - Clone", stacks: ["Typescript", "NextJs", "tailwindcss", "MongoDB", "Zustand"], desc:"Next.js web-app, inspired by AliExpress design, ensures performance, SEO, and security." },
-	{ url: "https://github.com/H8-FSJS-P3S6/gc01-palveeen22", title: "Instagram-Clone-app", stacks: ["Typescript", "React Native", "tailwindcss", "MongoDB", "Apollo GraphQL", "Redis"], desc:"Mobile application project developed using React Native." },
-	{ url: "https://turuntangan.id/", title: "Turun Tangan", stacks: ["Javascript", "react", "tailwindcss", "redux"], desc:"A non-profit youth volunteer movement engaged in social, humanity, environment, education, political education, and health with more than 70 chapters across Indonesia."},
-	{ url: "https://belinskyproduction.com/", title: "Belinsky Studio", stacks: ["Javascript", "react", "tailwindcss","content-layer"], desc:"A production house and a creative studio, its areas of expertise include producing both photography and filmmaking."},
+  {
+    id: '1001',
+    url: "https://apps.apple.com/us/app/curated-community/id6503678224",
+    image: "/assets/currated.png",
+    title: "Curated Community London",
+    desc: "A members-only social app designed to connect friendly people nearby, making it feel like an intimate yet massive friend group.",
+    stacks: ["Node.js", "React Native", "MongoDB", "Mongoose", "Google Maps", "Redux Toolkit"],
+    keywords: ["social app", "community", "friendship", "mobile app"],
+    features: [
+      "User matching based on location and interests",
+      "Private messaging and friend suggestions",
+      "Interactive map of nearby members"
+    ],
+    architectureHighlights: [
+      "Backend built with Node.js and MongoDB",
+      "State management with Redux Toolkit",
+      "Real-time location updates via Google Maps API"
+    ]
+  },
+  {
+    id: '1002',
+    url: "https://apps.apple.com/id/app/waterhub/id1491202942",
+    image: "/assets/waterhub.png",
+    title: "WaterHub",
+    desc: "Indonesia's first quota-based smart water refill station, accessible through a mobile app.",
+    stacks: ["Dart", "Flutter", "Provider"],
+    keywords: ["sustainability", "water refill", "mobile app", "Indonesia"],
+    features: [
+      "Real-time water availability tracking",
+      "User quota and refill history management",
+      "Multi-platform app support (iOS and Android)"
+    ],
+    architectureHighlights: [
+      "Flutter front-end with Provider state management",
+      "Native modules for device-specific operations",
+      "API integration for station management backend"
+    ]
+  },
+  {
+    id: '1003',
+    url: "https://github.com/Prevferr/Pintar-Ai-Next-app",
+    image: "/assets/open-ai.png",
+    title: "Pintar AI",
+    desc: "A web app integrating OpenAI to provide keyword-summarized research and smart project recommendations for investors.",
+    stacks: ["TypeScript", "React", "Next.js", "TailwindCSS", "Zustand"],
+    keywords: ["AI", "OpenAI", "investment", "web app"],
+    features: [
+      "Research keyword summarization",
+      "Investor project matching",
+      "OpenAI GPT-based recommendations"
+    ],
+    architectureHighlights: [
+      "Next.js server-side rendering for SEO optimization",
+      "State management with Zustand",
+      "OpenAI API integration with efficient caching"
+    ]
+  },
+  {
+    id: '1004',
+    url: "https://test-verihubs-webcam.vercel.app/",
+    image: "/assets/webcam-toy.png",
+    title: "WebcamToy",
+    desc: "A webcam app that lets users capture photos with filters and effects directly from their browser.",
+    stacks: ["TypeScript", "React", "TailwindCSS", "react-webcam"],
+    keywords: ["webcam", "photo app", "browser", "effects"],
+    features: [
+      "Live camera feed preview",
+      "Photo capture with visual effects",
+      "Download or share captured images"
+    ],
+    architectureHighlights: [
+      "Webcam integration with react-webcam library",
+      "Client-side image processing",
+      "Lightweight, optimized for browser performance"
+    ]
+  },
+  {
+    id: '1005',
+    url: "https://github.com/H8-FSJS-P3S6/gc01-palveeen22",
+    // image: "/images/projects/walkies.jpg",
+    title: "Walkies",
+    desc: "A fictional dog-walking service app, showcasing full UI/UX design and responsiveness across devices.",
+    stacks: ["TypeScript", "React Native", "TailwindCSS", "MongoDB", "Apollo GraphQL", "Redis"],
+    keywords: ["mobile app", "dog walking", "React Native", "responsive"],
+    features: [
+      "Dog walker booking and management",
+      "Profile creation and history tracking",
+      "Real-time notifications"
+    ],
+    architectureHighlights: [
+      "GraphQL APIs for efficient data fetching",
+      "Cross-platform mobile app with React Native",
+      "Redis caching for faster user sessions"
+    ]
+  },
+  {
+    id: '1006',
+    url: "https://canva-contributor.vercel.app/",
+    // image: "/images/projects/canvalon.jpg",
+    title: "Canvalon",
+    desc: "A collaborative whiteboard web app using Socket.IO for real-time multi-user drawing sessions.",
+    stacks: ["TypeScript", "ReactJS", "TailwindCSS", "Redux", "Node.js", "Socket.IO"],
+    keywords: ["whiteboard", "real-time", "Socket.IO", "collaboration"],
+    features: [
+      "Multi-user real-time drawing",
+      "Session-based room joining",
+      "Live cursor sharing"
+    ],
+    architectureHighlights: [
+      "Real-time communication with WebSockets",
+      "Node.js backend server",
+      "Redux for session and user state management"
+    ]
+  },
+  {
+    id: '1007',
+    url: "https://pesanaja-client-react.vercel.app/",
+    image: "/assets/pesanaja.png",
+    title: "Pesanaja",
+    desc: "A grocery delivery platform with Google Maps integration and online payments using Xendit API.",
+    stacks: ["JavaScript", "React", "TailwindCSS", "Ant Design", "Redux", "Node.js"],
+    keywords: ["e-commerce", "grocery app", "delivery", "maps integration"],
+    features: [
+      "Product browsing and shopping cart",
+      "Delivery address selection via Maps",
+      "Secure online payment integration"
+    ],
+    architectureHighlights: [
+      "Google Maps API integration",
+      "Secure payment system via Xendit",
+      "Responsive web design for mobile users"
+    ]
+  },
+  {
+    id: '1008',
+    url: "https://github.com/palveeen22/next-js-fullstack-aliexpress-clone",
+    image: "/assets/aliexpress-clone.png",
+    title: "Aliexpress RU - Clone",
+    desc: "A full-stack clone of AliExpress built with Next.js, optimized for performance, SEO, and security.",
+    stacks: ["TypeScript", "Next.js", "TailwindCSS", "MongoDB", "Zustand"],
+    keywords: ["e-commerce", "AliExpress", "Next.js", "clone project"],
+    features: [
+      "Product listing and search",
+      "Shopping cart and order management",
+      "User authentication and profiles"
+    ],
+    architectureHighlights: [
+      "Next.js API routes for backend logic",
+      "MongoDB database for product data",
+      "Zustand for global state management"
+    ]
+  },
+  {
+    id: '1009',
+    url: "https://github.com/H8-FSJS-P3S6/gc01-palveeen22",
+    // image: "/images/projects/instagram-clone.jpg",
+    title: "Instagram Clone App",
+    desc: "A mobile-first project inspired by Instagram, developed with a focus on GraphQL and real-time features.",
+    stacks: ["TypeScript", "React Native", "TailwindCSS", "MongoDB", "Apollo GraphQL", "Redis"],
+    keywords: ["mobile app", "Instagram clone", "social media", "React Native"],
+    features: [
+      "Post creation and feeds",
+      "Real-time chat and notifications",
+      "Profile and following system"
+    ],
+    architectureHighlights: [
+      "GraphQL APIs using Apollo",
+      "Real-time updates with Redis pub/sub",
+      "Scalable architecture for mobile platforms"
+    ]
+  },
+  {
+    id: '1010',
+    url: "https://turuntangan.id/",
+    // image: "/images/projects/turuntangan.jpg",
+    title: "Turun Tangan",
+    desc: "A national volunteer network focusing on social, humanitarian, and educational movements across Indonesia.",
+    stacks: ["JavaScript", "React", "TailwindCSS", "Redux"],
+    keywords: ["nonprofit", "volunteering", "social movement", "Indonesia"],
+    features: [
+      "Volunteer registration and profile management",
+      "Event management and participation tracking",
+      "Donation integration"
+    ],
+    architectureHighlights: [
+      "Responsive web app with React and TailwindCSS",
+      "Global state management with Redux",
+      "CMS-like structure for event updates"
+    ]
+  },
+  {
+    id: '1011',
+    url: "https://belinskyproduction.com/",
+    // image: "/images/projects/belinsky-studio.jpg",
+    title: "Belinsky Studio",
+    desc: "A creative production house specializing in photography and filmmaking, delivering high-quality visual content.",
+    stacks: ["JavaScript", "React", "TailwindCSS", "Content Layer"],
+    keywords: ["photography", "filmmaking", "studio", "creative production"],
+    features: [
+      "Portfolio showcase for photography and film",
+      "Contact and booking forms",
+      "Responsive grid layouts"
+    ],
+    architectureHighlights: [
+      "Static site generation using Content Layer",
+      "Responsive UI with TailwindCSS",
+      "Optimized SEO and fast load time"
+    ]
+  }
 ];

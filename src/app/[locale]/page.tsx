@@ -39,7 +39,7 @@ export default function Home() {
         <h1 className='text-4xl dark:text-foreground/100 font-bold text-pretty'>
           {t('title')}
         </h1>
-        <p className='text-xl break-words dark:text-foreground/80 text-pretty text-justify'>
+        <p className='text-base md:text-xl break-words dark:text-foreground/80 indent-8 text-justify'>
           {t('description')}
         </p>
         <span className='mt-1'>
