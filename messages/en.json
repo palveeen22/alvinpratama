@@ -11,20 +11,29 @@
 	"coming": {
 		"text": "Coming Soon..."
 	},
-		"latestInfo": {
-			"header": "Latest Works",
-			"desc": "A glimpse into the newest projects I've been working on recently.",
-			"lastProject": "Newest Projects",
-			"seeAll": "Explore All"
-		},
-		"projectInfo": {
-			"header": "All Projects",
-			"desc": "A full collection of everything I've built throughout my learning and exploration.",
-			"lastProject": "All Projects",
-			"seeAll": "Browse Projects"
-		},
-		"detail": {
-			"view": "View",
-			"back": " Back to projects"
-		}
+	"latestInfo": {
+		"header": "Latest Works",
+		"desc": "A glimpse into the newest projects I've been working on recently.",
+		"lastProject": "Newest Projects",
+		"seeAll": "Explore All"
+	},
+	"projectInfo": {
+		"header": "All Projects",
+		"desc": "A full collection of everything I've built throughout my learning and exploration.",
+		"lastProject": "All Projects",
+		"seeAll": "Browse Projects"
+	},
+	"detail": {
+		"view": "View",
+		"back": " Back to projects"
+	},
+	"blog": {
+		"back": "Back to all articles",
+		"readMore": "Read more",
+		"sharePost": "Share this article:",
+		"aboutAuthor": "About the author",
+		"authorBio": "A passionate developer focused on creating better web experiences through clean, accessible code and thoughtful UX design. I write about web development, performance optimization, and design patterns.",
+		"pageTitle": "Latest Articles & Dev Notes",
+		"pageDescription": "Explore technical tips, personal development notes, and lessons learned from real-world coding. From layout fixes to performance insights, this blog shares what’s working — and what’s not."
+	}
 }

@@ -1,15 +1,38 @@
 export const project = {
-	title: "Projects",
-	pharagraph: "Some things that I've created during my learning journey...."
+  title: "Projects",
+  pharagraph: "Some things that I've created during my learning journey...."
 }
 
 export const allPosts = [
-	{ description: "testx", title: "blabla", date: "2024/12/1", slug: "content-security-policy" },
-	{ description: "testx", title: "blabla", date: "2024/12/1", slug: "content-security-policy" },
-	{ description: "testx", title: "blabla", date: "2024/12/1", slug: "content-security-policy" },
+  { description: "testx", title: "blabla", date: "2024/12/1", slug: "content-security-policy" },
+  { description: "testx", title: "blabla", date: "2024/12/1", slug: "content-security-policy" },
+  { description: "testx", title: "blabla", date: "2024/12/1", slug: "content-security-policy" },
 ];
 
 export const projects = [
+  {
+    "id": "1012",
+    "url": "https://fxx-app.vercel.app/en",
+    "image": "/assets/fxx-cover.png",
+    "title": "Fxx App",
+    "desc": "An MVP platform designed to help international students find rental apartments in Saint Petersburg.",
+    "stacks": ["Next.js", "TailwindCSS", "TypeScript", "i18next"],
+    "keywords": ["student housing", "Saint Petersburg", "international students", "rental platform", "apartment search"],
+    "features": [
+      "Apartment listings with key details (price, location, amenities)",
+      "Multilingual support (English, Russian, Chinese)",
+      "Favorites feature for saved apartments",
+      "Responsive design for mobile and desktop",
+      "Basic contact system for connecting with landlords or agents"
+    ],
+    "architectureHighlights": [
+      "Built with Next.js App Router and TypeScript for modern development standards",
+      "i18next for multilingual support",
+      "TailwindCSS for responsive and clean UI",
+      "Static and server-rendered pages for performance",
+      "Scalable layout ready for expansion to other cities"
+    ]
+  },
   {
     id: '1001',
     url: "https://apps.apple.com/us/app/curated-community/id6503678224",
@@ -146,7 +169,7 @@ export const projects = [
   {
     id: '1008',
     url: "https://github.com/palveeen22/next-js-fullstack-aliexpress-clone",
-    image: "/assets/aliexpress-clone.png",
+    image: "/assets/aliexpres-clone.png",
     title: "Aliexpress RU - Clone",
     desc: "A full-stack clone of AliExpress built with Next.js, optimized for performance, SEO, and security.",
     stacks: ["TypeScript", "Next.js", "TailwindCSS", "MongoDB", "Zustand"],
@@ -184,7 +207,7 @@ export const projects = [
   {
     id: '1010',
     url: "https://turuntangan.id/",
-    // image: "/images/projects/turuntangan.jpg",
+    image: "/assets/turun-tangan.png",
     title: "Turun Tangan",
     desc: "A national volunteer network focusing on social, humanitarian, and educational movements across Indonesia.",
     stacks: ["JavaScript", "React", "TailwindCSS", "Redux"],
@@ -203,7 +226,7 @@ export const projects = [
   {
     id: '1011',
     url: "https://belinskyproduction.com/",
-    // image: "/images/projects/belinsky-studio.jpg",
+    image: "/assets/belinsky.png",
     title: "Belinsky Studio",
     desc: "A creative production house specializing in photography and filmmaking, delivering high-quality visual content.",
     stacks: ["JavaScript", "React", "TailwindCSS", "Content Layer"],
