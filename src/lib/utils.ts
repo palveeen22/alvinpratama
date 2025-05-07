@@ -1,5 +1,7 @@
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
+import { format, Locale } from 'date-fns';
+import { enUS, ru } from 'date-fns/locale';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -22,3 +24,18 @@ export default function formatDate(inputDateString: string) {
 
 export const formatStacks = (values: string[]) =>
     values.toString().replaceAll(',', ' • ')
+
+
+// Format date based on locale
+export function formatDateFn(date: Date, locale: string = 'en') {
+  const localeMap: Record<string, Locale> = {
+    'en': enUS,
+    'ru': ru,
+  };
+
+  return format(
+    new Date(date), 
+    'MMMM d, yyyy', 
+    { locale: localeMap[locale] || enUS }
+  );
+}
