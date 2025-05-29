@@ -4,7 +4,27 @@ import { projects } from '@/data';
 import Link from 'next/link';
 import ProjectCard from '@/components/ui/ProjectCard';
 import { useLocale, useTranslations } from 'next-intl';
+import { Metadata } from 'next';
+import { getUrl } from '@/lib/urls';
+import { getHeaders } from '@/lib/getHeaders';
+import { getMetadata } from '@/lib/metadata';
 
+export const generateMetadata = async (): Promise<Metadata> => {
+  const title = "Discover my Latest Project";
+  const description =
+    "Explore my newest project that blends innovation and performance to deliver top-tier digital solutions. Learn more now!";
+  const url = getUrl({ path: (await getHeaders()).path });
+
+  return await getMetadata(
+    {
+      title: title,
+      description: description,
+      openGraphArticle: {
+        ogUrl: url
+      }
+    }
+  )
+};
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 20 },

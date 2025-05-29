@@ -3,6 +3,27 @@ import { MotionArticle, MotionDiv, MotionSection } from '@/components/MotionClie
 import { projects } from '@/data';
 import ProjectCard from '@/components/ui/ProjectCard';
 import { useTranslations } from 'next-intl';
+import { getUrl } from '@/lib/urls';
+import { getHeaders } from '@/lib/getHeaders';
+import { Metadata } from 'next';
+import { getMetadata } from '@/lib/metadata';
+
+export const generateMetadata = async (): Promise<Metadata> => {
+  const title = "Creative Projects & Experiments, Building for Impact";
+  const description =
+    "Browse my favorite digital experiments and side projects—designed to solve real problems, explore new ideas, and make a meaningful impact through code.";
+  const url = getUrl({ path: (await getHeaders()).path });
+
+  return await getMetadata(
+    {
+      title: title,
+      description: description,
+      openGraphArticle: {
+        ogUrl: url
+      }
+    }
+  )
+};
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 20 },

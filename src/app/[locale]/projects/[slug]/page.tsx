@@ -6,6 +6,37 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { getStackColor } from '@/lib/color-proji';
 import { MotionDiv, MotionP, MotionSpan, MotionSvg, MotionUl } from '@/components/MotionClient';
+import { Metadata } from 'next';
+import { getUrl } from '@/lib/urls';
+import { getHeaders } from '@/lib/getHeaders';
+import { getMetadata } from '@/lib/metadata';
+
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const project = projects.find((p) => p.slug === params.slug);
+
+  if (!project) {
+    return {
+      title: 'Project Not Found',
+      description: 'The requested project does not exist.',
+    };
+  }
+
+  const title = project.metaTitle
+  const description = project.metaDescription
+  const url = getUrl({ path: (await getHeaders()).path });
+
+  return await getMetadata(
+    {
+      title: title,
+      description: description,
+      imageUrl: project.image,
+      openGraphArticle: {
+        ogUrl: url
+      }
+    }
+  )
+};
 
 // Animation variants
 const containerVariants = {
@@ -36,12 +67,12 @@ const fadeIn = {
   }
 };
 
-export default function ProjectPage({ params }: { params: { id: string } }) {
-  const { id } = params;
+export default function ProjectPage({ params }: { params: { slug: string } }) {
+  const { slug } = params;
   const t = useTranslations("detail");
 
   // Get project by ID
-  const project = projects.find(project => project.id === id);
+  const project = projects.find(project => project.slug === slug);
 
   // Handle case where project is not found
   if (!project) {

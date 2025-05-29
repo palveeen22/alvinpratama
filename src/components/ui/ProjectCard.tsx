@@ -12,7 +12,7 @@ const ProjectCard = ({ project }: TProjectCardProps) => {
   const locale = useLocale();
 
   return (
-    <Link href={`/${locale}/projects/${project?.id}`}>
+    <Link href={`/${locale}/projects/${project?.slug}`}>
       <Card className='transition-all duration-300 hover:-translate-y-2 cursor-pointer'>
         <div className='flex flex-row w-full justify-between items-center px-6 py-4'>
           <div className='flex w-4/5 justify-start flex-col md:gap-4'>

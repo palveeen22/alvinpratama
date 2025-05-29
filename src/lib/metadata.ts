@@ -36,7 +36,7 @@ export const getMetadataImage = (title: string) => [
 export const getMetadata = async ({
   title,
   description,
-  imageUrl,
+  imageUrl = "/assets/opengraph.png",
   urlData,
   openGraphArticle,
   canonicalUrl = 'https://www.alvinpratama.com',
@@ -45,14 +45,21 @@ export const getMetadata = async ({
   const getMetadataTitle = () => (modifiedTitle === title ? modifiedTitle : `${modifiedTitle}`)
   const modifiedTitle = title || statTitle;
   const medifiedDescription = description;
-  const images = [{
-    // url: imageUrl ? `${process.env.NEXT_PUBLIC_BASE_URL}${imageUrl}` : URLS.ogImage,
-    url: "https://www.alvinpratama.com/assets/opengraph.png",
-    alt: getMetadataTitle(),
-    type: "image/png",
-    width: 1200,
-    height: 630
-  }];
+
+  const imageSrc = imageUrl
+    ? `https://www.alvinpratama.com${imageUrl}`
+    : URLS.ogImage;
+
+  const images = [
+    {
+      url: imageSrc,
+      alt: getMetadataTitle(),
+      type: "image/png",
+      width: 1200,
+      height: 630
+    }
+  ];
+
 
 
   const openGraphData: OpenGraphArticle = {
@@ -72,7 +79,7 @@ export const getMetadata = async ({
     authors: [{ name: 'Alvin Pratama' }],
     title: {
       default: modifiedTitle,
-      template: `%s | ${modifiedTitle}`
+      template: `%s | Alvin Pratama`
     },
     keywords: keywords,
     description: "I'm a Software Engineer with expertise in Frontend and Mobile App Development. Passionate about user experience, infrastructure as code and cloud solutions. Driven to make quality code which is clean, well tested, and maintainable. Committed to constant learning and skill enhancement in new technologies and programming languages.",
@@ -82,7 +89,7 @@ export const getMetadata = async ({
     openGraph: {
       title: {
         default: modifiedTitle,
-        template: `%s | ${modifiedTitle}`
+        template: `%s | Alvin Pratama`
       },
       description: medifiedDescription,
       url: url,
@@ -94,7 +101,7 @@ export const getMetadata = async ({
     },
     twitter: {
       card: "summary_large_image",
-      title: { default: modifiedTitle, template: `%s | ${modifiedTitle}` },
+      title: { default: modifiedTitle, template: `%s | Alvin Pratama` },
       description: medifiedDescription,
       images,
       creator: url
