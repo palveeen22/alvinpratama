@@ -4,9 +4,10 @@ import { MotionDiv } from '@/components/MotionClient';
 interface BlogPost {
   id: string;
   title: string;
-  content: string;
+  contentSort: string;
   excerpt: string;
   createdAt: Date;
+  slug: string;
 }
 
 interface BlogGridProps {

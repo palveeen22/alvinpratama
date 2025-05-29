@@ -7,9 +7,9 @@ export type Dictionary = typeof en;
 export type DictionaryKey = keyof typeof en;
 
 export type TBlogs = {
-	details: string
-	title: string,
-	date: string,
+    details: string
+    title: string,
+    date: string,
 };
 
 export type TProjectCardProps = {
@@ -19,6 +19,7 @@ export type TProjectCardProps = {
         stacks: string[]
         desc: string | undefined
         id: string
+        slug: string
     }
 }
 

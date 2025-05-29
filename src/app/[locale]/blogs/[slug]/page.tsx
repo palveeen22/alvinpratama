@@ -6,49 +6,46 @@ import { formatDateFn } from '@/lib/utils';
 import { useTranslations } from 'next-intl';
 import { getStackColor } from '@/lib/color-proji';
 import { MotionDiv, MotionSpan } from '@/components/MotionClient';
+import { getUrl } from '@/lib/urls';
+import { getHeaders } from '@/lib/getHeaders';
+import { getMetadata } from '@/lib/metadata';
+import { Metadata } from 'next';
+import { blogPosts } from '@/data/data';
 
-const blogPosts = [
-  {
-    id: '2',
-    title: 'Stop Using 100vh for Full-Height Layouts on Mobile: Here’s Why',
-    content: `If you're using \`100vh\` for full-height layouts in your CSS, you might be unknowingly creating layout issues — especially on mobile devices.
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const post = blogPosts.find((p) => p.slug === params.slug);
 
-### 🚫 The Problem:
-\`100vh\` measures the viewport height *without accounting for dynamic browser UI elements*, such as the mobile address or navigation bars. This means your layout may look fine on desktop but:
-- Content gets cut off on mobile
-- Unwanted scrollbars appear
-- Elements don't align correctly
-
-### ✅ The Modern Fix: \`100dvh\`
-Instead of hardcoding \`height: 100vh;\`, use:
-
-\`\`\`css
-height: 100dvh;
-\`\`\`
-
-The new \`dvh\` unit (Dynamic Viewport Height) adapts to visible screen size, **even when browser UI changes** — like when the address bar hides on scroll.
-
-### 🧠 TL;DR
-- **Before:** \`height: 100vh;\` → breaks layouts on mobile
-- **Now:** \`height: 100dvh;\` → mobile-safe and reliable
-
-It’s a tiny change with a big impact that saves hours of layout debugging.`,
-    excerpt: 'Still using 100vh in CSS? Discover why 100dvh is the better choice for mobile-friendly full-height layouts.',
-    createdAt: new Date('2025-05-01'),
-    author: 'Alvin Pratama',
-    readingTime: '1 min read',
-    coverImage: '/assets/mob.jpeg',
-    tags: ['CSS', 'Mobile', 'Responsive Design', 'Web Development']
+  if (!post) {
+    return {
+      title: 'post Not Found',
+      description: 'The requested post does not exist.',
+    };
   }
-];
+
+  const title = post.metaTitle
+  const description = post.metaDescription
+  const url = getUrl({ path: (await getHeaders()).path });
+
+  return await getMetadata(
+    {
+      title: title,
+      description: description,
+      imageUrl: post.coverImage,
+      canonicalUrl: url,
+      openGraphArticle: {
+        ogUrl: url
+      }
+    }
+  )
+};
 
 
-export default function BlogDetailPage({ params }: { params: { id: string, locale: string } }) {
-  const { id, locale } = params;
+export default function BlogDetailPage({ params }: { params: { slug: string, locale: string } }) {
+  const { slug, locale } = params;
   const t = useTranslations('blog');
 
   // Find the blog post with matching ID
-  const post = blogPosts.find(post => post.id === id);
+  const post = blogPosts.find(post => post.slug === slug);
 
   // Handle case where post is not found
   if (!post) {

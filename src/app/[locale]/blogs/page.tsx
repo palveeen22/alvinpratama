@@ -2,16 +2,28 @@ import React from 'react';
 import { BlogGrid } from './_components/blog-grid';
 import { useTranslations } from 'next-intl';
 import { MotionDiv, MotionSection } from '@/components/MotionClient';
+import { Metadata } from 'next';
+import { getUrl } from '@/lib/urls';
+import { getHeaders } from '@/lib/getHeaders';
+import { getMetadata } from '@/lib/metadata';
+import { blogPosts } from '@/data/data';
 
-const blogPosts = [
-  {
-    id: '2',
-    title: 'Still using 100vh for full-height layouts in your CSS?',
-    content: `You might be unintentionally breaking your mobile layouts. Why? ❌ 100vh doesn't account for dynamic browser UI (like the address bar), especially on mobile. So even though it looks like full height, part of your content might get cut off or cause awkward scroll behavior. The fix? ✅ Use 100dvh instead. It dynamically adapts to the actual visible screen height — even when the browser UI changes. It's a one-line change that can save you hours of layout debugging. /* Problematic on mobile / height: 100vh; / Mobile-friendly */ height: 100dvh; Small detail. Big impact.`,
-    excerpt: 'You might be unintentionally breaking your mobile layouts with 100vh. Here\'s the fix.',
-    createdAt: new Date('2025-05-01')
-  }
-];
+export const generateMetadata = async (): Promise<Metadata> => {
+  const title = "Blog";
+  const description =
+    "Explore practical articles, guides, and tutorials on modern web development—covering React, Next.js, TypeScript, and backend tools for developers and product teams.";
+  const url = getUrl({ path: (await getHeaders()).path });
+
+  return await getMetadata(
+    {
+      title: title,
+      description: description,
+      openGraphArticle: {
+        ogUrl: url
+      }
+    }
+  )
+};
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -41,13 +53,13 @@ export default function BlogsPage() {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="w-full flex flex-col gap-14 md:gap-20 flex-grow"
-      >
+      className="w-full flex flex-col gap-14 md:gap-20 flex-grow h-screen"
+    >
       <MotionDiv
         variants={sectionVariants}
-        >
-        <h1 className="text-4xl font-bold mb-4">{t('pageTitle')}</h1>
-        <p className="text-xl">{t('pageDescription')}</p>
+      >
+        <h1 className="text-3xl md:text-5xl dark:text-foreground/100 font-bold text-pretty">{t('pageTitle')}</h1>
+        <p className="text-base md:text-xl break-words dark:text-foreground/80 text-pretty">{t('pageDescription')}</p>
       </MotionDiv>
       <BlogGrid posts={blogPosts} />
     </MotionSection>
