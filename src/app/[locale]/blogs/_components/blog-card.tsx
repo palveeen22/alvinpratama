@@ -5,15 +5,7 @@ import Link from 'next/link';
 import { useLocale } from 'next-intl';
 // import { formatDistance } from 'date-fns';
 import { MotionArticle } from '@/components/MotionClient';
-
-interface BlogPost {
-  id: string;
-  title: string;
-  contentSort: string;
-  excerpt: string;
-  createdAt: Date;
-  slug: string;
-}
+import { BlogPost } from './blog-grid';
 
 interface BlogCardProps {
   post: BlogPost;
@@ -22,18 +14,10 @@ interface BlogCardProps {
 export const BlogCard = ({ post }: BlogCardProps) => {
   const locale = useLocale();
 
-  // // Choose date-fns locale based on the app locale
-  // const dateLocale = locale === 'ru' ? ru : enUS;
-
-  // // Format the date relative to today (e.g. "2 days ago")
-  // const formattedDate = formatDistance(
-  //   new Date(post.createdAt),
-  //   new Date(),
-  //   { addSuffix: true, locale: dateLocale }
-  // );
+  if (!post) return null
 
   // Get excerpt or truncate content if no excerpt
-  const displayExcerpt = post.excerpt || post.contentSort.substring(0, 150) + '...';
+  const displayExcerpt = post.excerpt || post.contentSort?.substring(0, 150) + '...';
 
   // Animation variants
   const cardVariants = {

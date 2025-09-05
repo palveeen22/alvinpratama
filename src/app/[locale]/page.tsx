@@ -1,15 +1,11 @@
 import { MotionArticle, MotionSection } from '@/components/MotionClient'
-import Icons from '@/components/ui/Icons';
 import { useTranslations } from 'next-intl';
+import { ProjectShowcase } from './latest/_components/product-card';
+import { BlogSection } from './blogs/_components/blog-section';
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, x: -100 },
-  visible: { opacity: 1, x: 0 },
 };
 
 const containerVariants = {
@@ -27,7 +23,7 @@ export default function Home() {
 
   return (
     <MotionSection
-      className='w-full flex flex-col justify-center gap-14 md:gap-20 flex-grow'
+      className='w-full flex flex-col gap-8 md:gap-14 flex-grow'
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -36,16 +32,15 @@ export default function Home() {
         className='flex flex-col gap-4'
         variants={sectionVariants}
       >
-        <h1 className='text-4xl dark:text-foreground/100 font-bold text-pretty'>
-          {t('title')}
+        <h1 className='text-xl dark:text-foreground/100 font-light text-pretty'>
+          {t('subTitle')}
         </h1>
-        <p className='text-base md:text-xl break-words dark:text-foreground/80 indent-8 text-justify'>
-          {t('description')}
-        </p>
-        <span className='mt-1'>
-          <Icons />
-        </span>
       </MotionArticle>
+
+      <ProjectShowcase />
+
+      <BlogSection />
+
     </MotionSection>
   )
 }
