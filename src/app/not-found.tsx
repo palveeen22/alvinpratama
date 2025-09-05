@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
+import { Button } from '@/components/ui/Button'
 
 const NotFound = () => {
   const router = useRouter()
@@ -33,25 +34,25 @@ const NotFound = () => {
 
   return (
     <html lang="en">
-      <body className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      <body className="min-h-screen">
         <div className="min-h-screen flex items-center justify-center px-4">
           <div className="text-center max-w-2xl mx-auto">
             {/* 404 Text */}
             <div className="mb-8">
-              <h1 className="text-9xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 mb-4">
+              <h1 className="text-9xl font-extrabold mb-4">
                 404
               </h1>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
                 Page Not Found
               </h2>
-              <p className="text-gray-300 text-lg mb-8">
+              <p className="text-lg mb-8">
                 Oops! The page you`&rsquo;`re looking for seems to have wandered off into the digital void.
               </p>
             </div>
 
             {/* GIF Container */}
             <div className="mb-8 flex justify-center">
-              <div className="relative w-80 h-64 md:w-96 md:h-80 rounded-2xl overflow-hidden shadow-2xl border border-purple-500/20">
+              <div className="relative w-80 h-64 md:w-96 md:h-80 rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src="/assets/not-found.gif"
                   alt="Page not found animation"
@@ -67,52 +68,22 @@ const NotFound = () => {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-              <button
+              <Button
+                variant='outline'
                 onClick={handleGoHome}
-                className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-full hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="px-8 py-3 font-semibold rounded-lg  transition-all duration-300 transform"
               >
                 Back to Home
-              </button>
-              <button
-                onClick={handleGoBack}
-                className="px-8 py-3 border-2 border-purple-400 text-purple-400 font-semibold rounded-full hover:bg-purple-400 hover:text-white transition-all duration-300 transform hover:scale-105"
-              >
-                Go Back
-              </button>
+              </Button>
             </div>
 
             {/* Auto redirect countdown */}
-            <div className="text-gray-400 text-sm">
+            <div className="text-sm">
               <p>
                 Redirecting to home page in{' '}
-                <span className="text-purple-400 font-semibold">{countdown}</span>{' '}
+                <span className="font-semibold">{countdown}</span>{' '}
                 seconds...
               </p>
-            </div>
-
-            {/* Optional: Suggested links */}
-            <div className="mt-12 pt-8 border-t border-gray-700">
-              <p className="text-gray-400 mb-4">Maybe you were looking for:</p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <button
-                  onClick={() => router.push('/projects')}
-                  className="text-purple-400 hover:text-purple-300 underline underline-offset-4 transition-colors"
-                >
-                  Projects
-                </button>
-                <button
-                  onClick={() => router.push('/about')}
-                  className="text-purple-400 hover:text-purple-300 underline underline-offset-4 transition-colors"
-                >
-                  About
-                </button>
-                <button
-                  onClick={() => router.push('/contact')}
-                  className="text-purple-400 hover:text-purple-300 underline underline-offset-4 transition-colors"
-                >
-                  Contact
-                </button>
-              </div>
             </div>
           </div>
         </div>

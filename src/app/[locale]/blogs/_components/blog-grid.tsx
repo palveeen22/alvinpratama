@@ -1,20 +1,20 @@
 import { BlogCard } from './blog-card';
 import { MotionDiv } from '@/components/MotionClient';
 
-interface BlogPost {
+export interface BlogPost {
   id: string;
   title: string;
-  contentSort: string;
+  contentSort?: string;
   excerpt: string;
   createdAt: Date;
   slug: string;
 }
 
 interface BlogGridProps {
-  posts: BlogPost[];
+  post: BlogPost;
 }
 
-export const BlogGrid = ({ posts }: BlogGridProps) => {
+export const BlogGrid = ({ post }: BlogGridProps) => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -32,9 +32,7 @@ export const BlogGrid = ({ posts }: BlogGridProps) => {
       initial="hidden"
       animate="visible"
     >
-      {posts.map((post) => (
-        <BlogCard key={post.id} post={post} />
-      ))}
+      <BlogCard key={post?.id} post={post} />
     </MotionDiv>
   );
 };

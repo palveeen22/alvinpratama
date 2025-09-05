@@ -5,7 +5,7 @@ import { HeaderBack } from '@/components/header-back';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { getStackColor } from '@/lib/color-proji';
-import { MotionDiv, MotionP, MotionSpan, MotionSvg, MotionUl } from '@/components/MotionClient';
+import { MotionDiv, MotionP, MotionSpan, MotionUl } from '@/components/MotionClient';
 import { Metadata } from 'next';
 import { getUrl } from '@/lib/urls';
 import { getHeaders } from '@/lib/getHeaders';
@@ -205,18 +205,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                   transition={{ duration: 0.3, delay: idx * 0.1 }}
                 >
                   <li className="flex items-start">
-                    <MotionSvg
-                      className="w-5 h-5 text-green-500 mr-2 mt-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{ type: "spring", stiffness: 500, delay: idx * 0.1 + 0.2 }}
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </MotionSvg>
-                    {feature}
+                    - {feature}
                   </li>
                 </MotionUl>
               ))}
@@ -238,18 +227,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                   transition={{ duration: 0.3, delay: idx * 0.1 }}
                 >
                   <li className="flex items-start">
-                    <MotionSvg
-                      className="w-5 h-5 text-blue-500 mr-2 mt-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{ type: "spring", stiffness: 500, delay: idx * 0.1 + 0.2 }}
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </MotionSvg>
-                    {item}
+                    - {item}
                   </li>
                 </MotionUl>
               ))}

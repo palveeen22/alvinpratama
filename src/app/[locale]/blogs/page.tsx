@@ -61,7 +61,9 @@ export default function BlogsPage() {
         <h1 className="text-3xl md:text-5xl dark:text-foreground/100 font-bold text-pretty">{t('pageTitle')}</h1>
         <p className="text-base md:text-xl break-words dark:text-foreground/80 text-pretty">{t('pageDescription')}</p>
       </MotionDiv>
-      <BlogGrid posts={blogPosts} />
+      {blogPosts?.map((blog, idx) => (
+        <BlogGrid key={idx} post={blog} />
+      ))}
     </MotionSection>
   );
 }
