@@ -50,13 +50,12 @@ const ProjectPage = () => {
 
   return (
     <MotionSection
-      className='w-full flex flex-col gap-14 md:gap-20 flex-grow'
+      className='w-full flex flex-col gap-14 md:gap-20 flex-grow h-screen"'
       variants={containerVariants}
       initial="hidden"
       animate="visible"
     >
       <MotionArticle
-        className='flex flex-col gap-4'
         variants={sectionVariants}
       >
         <h1 className='text-3xl md:text-5xl dark:text-foreground/100 font-bold text-pretty'>

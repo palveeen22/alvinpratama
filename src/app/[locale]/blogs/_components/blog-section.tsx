@@ -13,10 +13,12 @@ export const BlogSection = () => {
       {/* Header */}
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-xl font-light">{t("navbarLabel.blog")}</h1>
+       <Link href={`${locale}/blogs`}>
         <button className="flex items-center gap-2 transition-colors group">
           <span>{t("latestInfo.seeAll")}</span>
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
         </button>
+       </Link>
       </div>
 
       <article className='flex flex-col gap-4'>

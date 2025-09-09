@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     title: title,
     description: description,
     imageUrl: post.coverImage,
-    canonicalUrl: url,
+    canonicalUrl: `${url}/${post?.slug}`,
     openGraphArticle: {
       ogUrl: url
     }

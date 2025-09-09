@@ -9,16 +9,25 @@ import {
 } from './ui/Dropdown';
 import { useRouter, usePathname } from 'next/navigation';
 import { useLocale } from 'next-intl';
-import { Languages } from 'lucide-react';
+import { Check } from 'lucide-react';
+
+// Language configuration
+const languages = {
+  en: { flag: '🇺🇸', label: 'English', short: 'EN' },
+  ru: { flag: '🇷🇺', label: 'Русский', short: 'RU' }
+} as const;
 
 export function ToggleLanguages() {
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
   const pathname = usePathname();
-  const localeActive = useLocale();
+  const localeActive = useLocale() as keyof typeof languages;
 
   const onSelectChange: MouseEventHandler<HTMLDivElement> = (event) => {
     const nextLocale = event.currentTarget.dataset.value;
+
+    // Don't do anything if same locale is selected
+    if (nextLocale === localeActive) return;
 
     // Get the current path without the locale prefix
     const pathWithoutLocale = pathname.replace(new RegExp(`^/${localeActive}`), '') || '/';
@@ -31,22 +40,41 @@ export function ToggleLanguages() {
     });
   };
 
+  const currentLanguage = languages[localeActive];
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant='outline' size='icon'>
-          <Languages className='h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0' />
-          <Languages className='absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100' />
+        <Button
+          variant='outline'
+          size='sm'
+          className='gap-2 min-w-[80px]'
+          disabled={isPending}
+        >
+          <span className='text-base'>{currentLanguage?.flag}</span>
+          <span className='font-medium text-sm'>{currentLanguage?.short}</span>
+          {/* <Languages className='h-4 w-4 opacity-60' /> */}
           <span className='sr-only'>Toggle language</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align='end'>
-        <DropdownMenuItem data-value="en" onClick={onSelectChange}>
-          🇺🇸  En
-        </DropdownMenuItem>
-        <DropdownMenuItem data-value="ru" onClick={onSelectChange}>
-          🇷🇺  Ru
-        </DropdownMenuItem>
+      <DropdownMenuContent align='end' className='min-w-[120px]'>
+        {Object.entries(languages).map(([locale, lang]) => (
+          <DropdownMenuItem
+            key={locale}
+            data-value={locale}
+            onClick={onSelectChange}
+            className='flex items-center justify-between cursor-pointer'
+            disabled={isPending}
+          >
+            <div className='flex items-center gap-2'>
+              <span className='text-base'>{lang.flag}</span>
+              <span>{lang.label}</span>
+            </div>
+            {localeActive === locale && (
+              <Check className='h-4 w-4 text-green-600' />
+            )}
+          </DropdownMenuItem>
+        ))}
       </DropdownMenuContent>
     </DropdownMenu>
   );

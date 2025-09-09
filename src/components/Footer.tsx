@@ -16,6 +16,10 @@ const Footer = () => {
     {
       href: "https://www.instagram.com/alvinnnprtm_/",
       title: "Instagram"
+    },
+    {
+      href: "https://t.me/alvinmacaronnie",
+      title: "Telegram"
     }
   ]
 

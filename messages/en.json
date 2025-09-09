@@ -34,7 +34,7 @@
 		"sharePost": "Share this article:",
 		"aboutAuthor": "About the author",
 		"authorBio": "A passionate developer focused on creating better web experiences through clean, accessible code and thoughtful UX design. I write about web development, performance optimization, and design patterns.",
-		"pageTitle": "Latest Articles & Dev Notes",
-		"pageDescription": "Explore technical tips, personal development notes, and lessons learned from real-world coding. From layout fixes to performance insights, this blog shares what’s working — and what’s not."
+		"pageTitle": "Latest Articles",
+		"pageDescription": "Explore technical tips, personal development notes, and lessons learned from real-world coding."
 	}
 }
