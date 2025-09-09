@@ -1,12 +1,14 @@
 import React from 'react';
 import { BlogGrid } from './_components/blog-grid';
-import { useTranslations } from 'next-intl';
-import { MotionDiv, MotionSection } from '@/components/MotionClient';
+import { useLocale, useTranslations } from 'next-intl';
+import { MotionArticle, MotionDiv, MotionSection } from '@/components/MotionClient';
 import { Metadata } from 'next';
 import { getUrl } from '@/lib/urls';
 import { getHeaders } from '@/lib/getHeaders';
 import { getMetadata } from '@/lib/metadata';
 import { blogPosts } from '@/data/data';
+import Link from 'next/link';
+import { formatBlogDate } from '@/lib/format-date';
 
 export const generateMetadata = async (): Promise<Metadata> => {
   const title = "Blog";
@@ -46,6 +48,7 @@ const containerVariants = {
 };
 
 export default function BlogsPage() {
+  const locale = useLocale();
   const t = useTranslations("blog")
 
   return (
@@ -55,15 +58,34 @@ export default function BlogsPage() {
       animate="visible"
       className="w-full flex flex-col gap-14 md:gap-20 flex-grow h-screen"
     >
-      <MotionDiv
+      <MotionArticle
         variants={sectionVariants}
       >
         <h1 className="text-3xl md:text-5xl dark:text-foreground/100 font-bold text-pretty">{t('pageTitle')}</h1>
-        <p className="text-base md:text-xl break-words dark:text-foreground/80 text-pretty">{t('pageDescription')}</p>
-      </MotionDiv>
-      {blogPosts?.map((blog, idx) => (
-        <BlogGrid key={idx} post={blog} />
-      ))}
+        {/* <p className="text-base md:text-xl break-words dark:text-foreground/80 text-pretty">{t('pageDescription')}</p> */}
+      </MotionArticle>
+      <div
+        className='flex flex-col gap-4'>
+        {blogPosts?.map((blog, idx) => (
+          <MotionDiv
+            variants={cardVariants}
+            key={idx}
+          >
+            <Link
+              href={`/${locale}/blogs/${blog.slug}`}
+              key={idx}
+              className='group flex flex-col md:flex-row md:justify-between items-start md:items-center gap-2 md:gap-4 text-sm md:text-base'
+            >
+              <span className='group-hover:underline decoration-wavy underline-offset-4'>
+                {blog?.title}
+              </span>
+              <span className='self-end md:self-auto'>
+                {formatBlogDate(blog?.createdAt)}
+              </span>
+            </Link>
+          </MotionDiv>
+        ))}
+      </div>
     </MotionSection>
   );
 }

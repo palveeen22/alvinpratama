@@ -30,11 +30,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const description = post.metaDescription;
   const url = getUrl({ path: (await getHeaders()).path });
 
+  console.log(url, "<<<<");
+
   return await getMetadata({
     title: title,
     description: description,
     imageUrl: post.coverImage,
-    canonicalUrl: url,
+    canonicalUrl: `${url}/${post?.slug}`,
     openGraphArticle: {
       ogUrl: url
     }

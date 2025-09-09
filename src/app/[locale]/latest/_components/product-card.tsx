@@ -30,10 +30,12 @@ export const ProjectShowcase = () => {
       {/* Header */}
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-xl font-light">{t("header")}</h1>
-        <button className="flex items-center gap-2 transition-colors group">
-          <span>{t("seeAll")}</span>
-          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-        </button>
+        <Link href={`/${locale}/projects`}>
+          <button className="flex items-center gap-2 transition-colors group">
+            <span>{t("seeAll")}</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </button>
+        </Link>
       </div>
 
       {/* Mobile: Horizontal scroll, Desktop: Grid */}

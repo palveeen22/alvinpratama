@@ -29,10 +29,9 @@ export default function Home() {
       animate="visible"
     >
       <MotionArticle
-        className='flex flex-col gap-4'
         variants={sectionVariants}
       >
-        <h1 className='text-xl dark:text-foreground/100 font-light text-pretty'>
+        <h1 className='text-2xl dark:text-foreground/100 font-light text-pretty'>
           {t('subTitle')}
         </h1>
       </MotionArticle>
