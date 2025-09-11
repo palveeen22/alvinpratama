@@ -13,11 +13,26 @@ import { Metadata } from 'next';
 import { blogPosts } from '@/data/data';
 import { formatBlogDate } from '@/lib/format-date';
 
-// Flatten the nested array structure to get all blog posts
+// Define supported locales
+type SupportedLocale = 'en' | 'ru';
+
+function isSupportedLocale(locale: string): locale is SupportedLocale {
+  return locale === 'en' || locale === 'ru';
+}
+
 const flattenedBlogPosts = blogPosts.flat();
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const post = flattenedBlogPosts.find((p) => p.slug === params.slug);
+export async function generateMetadata({ params }: {
+  params: Promise<{ slug: string, locale: string }>
+}): Promise<Metadata> {
+  const { slug, locale } = await params;
+
+  // Validate locale
+  if (!isSupportedLocale(locale)) {
+    notFound();
+  }
+
+  const post = flattenedBlogPosts.find((p) => p.slug === slug);
 
   if (!post) {
     return {
@@ -26,23 +41,29 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     };
   }
 
-  const title = post.metaTitle;
-  const description = post.metaDescription;
-  const url = getUrl({ path: (await getHeaders()).path });
+  // Fix: Construct proper canonical URL with locale and slug
+  const baseUrl = getUrl({ path: '' });
+  const canonicalUrl = `${baseUrl}/${locale}/blogs/${slug}`;
+
+  const publishedTime = post.createdAt.toISOString();
 
   return await getMetadata({
-    title: title,
-    description: description,
+    title: post.metaTitle,
+    description: post.metaDescription,
     imageUrl: post.coverImage,
-    canonicalUrl: `${url}/${post?.slug}`,
+    tags: post.tags,
+    canonicalUrl: canonicalUrl,
+    urlData: canonicalUrl,
     openGraphArticle: {
-      ogUrl: url
+      publishedTime,
+      section: post.tags[0] || "Blog",
+      ogUrl: canonicalUrl
     }
   });
 }
 
 export default function BlogDetailPage({ params }: { params: { slug: string, locale: string } }) {
-  const { slug, locale } = params;
+  const { slug } = params;
   const t = useTranslations('blog');
 
   // Find the blog post with matching slug from flattened array
@@ -145,7 +166,7 @@ export default function BlogDetailPage({ params }: { params: { slug: string, loc
       // Handle inline code, bold, and other formatting
       const formatInlineElements = (text: string) => {
         const parts = text.split(/(`[^`]+`|\*\*[^*]+\*\*|\*[^*]+\*)/g);
-        
+
         return parts.map((part, idx) => {
           // Inline code
           if (part.startsWith('`') && part.endsWith('`')) {
@@ -227,7 +248,7 @@ export default function BlogDetailPage({ params }: { params: { slug: string, loc
           <div className="flex flex-wrap gap-2 mb-8">
             {post.tags.map((tag, index) => {
               const bgColorClass = getStackColor(tag);
-              
+
               return (
                 <MotionSpan
                   key={index}
@@ -245,7 +266,7 @@ export default function BlogDetailPage({ params }: { params: { slug: string, loc
 
           {/* Cover image (if available) */}
           {post.coverImage && (
-            <MotionDiv 
+            <MotionDiv
               variants={itemVariants}
               className="relative aspect-video rounded-xl overflow-hidden mb-12 shadow-lg"
             >

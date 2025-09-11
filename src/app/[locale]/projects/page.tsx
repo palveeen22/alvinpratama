@@ -8,18 +8,26 @@ import { getHeaders } from '@/lib/getHeaders';
 import { Metadata } from 'next';
 import { getMetadata } from '@/lib/metadata';
 
-export const generateMetadata = async (): Promise<Metadata> => {
+export const generateMetadata = async ({ params }: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> => {
+  const { locale } = await params;
+
   const title = "Creative Projects & Experiments, Building for Impact";
   const description =
     "Browse my favorite digital experiments and side projects—designed to solve real problems, explore new ideas, and make a meaningful impact through code.";
-  const url = getUrl({ path: (await getHeaders()).path });
+
+  const baseUrl = getUrl({ path: '' });
+  const canonicalUrl = `${baseUrl}/${locale}/projects`;
 
   return await getMetadata(
     {
       title: title,
       description: description,
+      canonicalUrl: canonicalUrl,
+      urlData: canonicalUrl,
       openGraphArticle: {
-        ogUrl: url
+        ogUrl: canonicalUrl
       }
     }
   )

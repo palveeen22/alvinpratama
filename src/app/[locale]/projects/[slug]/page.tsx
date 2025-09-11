@@ -11,9 +11,16 @@ import { getUrl } from '@/lib/urls';
 import { getHeaders } from '@/lib/getHeaders';
 import { getMetadata } from '@/lib/metadata';
 
+// Define supported locales
+type SupportedLocale = 'en' | 'ru';
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const project = projects.find((p) => p.slug === params.slug);
+function isSupportedLocale(locale: string): locale is SupportedLocale {
+  return locale === 'en' || locale === 'ru';
+}
+
+export async function generateMetadata({ params }: { params: { slug: string, locale: string } }): Promise<Metadata> {
+  const { slug, locale } = await params;
+  const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
     return {
@@ -24,15 +31,19 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
   const title = project.metaTitle
   const description = project.metaDescription
-  const url = getUrl({ path: (await getHeaders()).path });
+  const baseUrl = getUrl({ path: '' });
+  const canonicalUrl = `${baseUrl}/${locale}/projects/${slug}`;
+
 
   return await getMetadata(
     {
       title: title,
       description: description,
       imageUrl: project.image,
+      canonicalUrl: canonicalUrl,
+      urlData: canonicalUrl,
       openGraphArticle: {
-        ogUrl: url
+        ogUrl: canonicalUrl
       }
     }
   )
