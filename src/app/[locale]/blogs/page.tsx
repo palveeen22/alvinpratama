@@ -10,18 +10,27 @@ import { blogPosts } from '@/data/data';
 import Link from 'next/link';
 import { formatBlogDate } from '@/lib/format-date';
 
-export const generateMetadata = async (): Promise<Metadata> => {
+export const generateMetadata = async ({ params }: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> => {
+  const { locale } = await params;
+
+
   const title = "Blog";
   const description =
     "Explore practical articles, guides, and tutorials on modern web development—covering React, Next.js, TypeScript, and backend tools for developers and product teams.";
-  const url = getUrl({ path: (await getHeaders()).path });
+
+  const baseUrl = getUrl({ path: '' });
+  const canonicalUrl = `${baseUrl}/${locale}/projects`;
 
   return await getMetadata(
     {
       title: title,
       description: description,
+      canonicalUrl: canonicalUrl,
+      urlData: canonicalUrl,
       openGraphArticle: {
-        ogUrl: url
+        ogUrl: canonicalUrl
       }
     }
   )
