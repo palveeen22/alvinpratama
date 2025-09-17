@@ -113,7 +113,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             >
               <Image
                 src={project?.image}
-                alt={project.title}
+                alt={`Project ${project.title} Alvin Pratama`}
                 width={800}
                 height={400}
                 className="w-full h-auto object-cover"

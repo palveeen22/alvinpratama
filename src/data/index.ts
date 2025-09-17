@@ -128,7 +128,7 @@ export const projects = [
     id: '1005',
     slug: "walkies",
     url: "https://github.com/H8-FSJS-P3S6/gc01-palveeen22",
-    // image: "/images/projects/walkies.jpg",
+    image: "/assets/walkies.png",
     title: "Walkies",
     desc: "A fictional dog-walking service app, showcasing full UI/UX design and responsiveness across devices.",
     stacks: ["TypeScript", "React Native", "TailwindCSS", "MongoDB", "Apollo GraphQL", "Redis"],
