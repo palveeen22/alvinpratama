@@ -1,6 +1,6 @@
 import { MotionArticle, MotionSection } from '@/components/MotionClient'
 import { useTranslations } from 'next-intl';
-import { ProjectShowcase } from './latest/_components/product-card';
+import { ProjectShowcase } from './latest/_components/project-showcase';
 import { BlogSection } from './blogs/_components/blog-section';
 
 const sectionVariants = {

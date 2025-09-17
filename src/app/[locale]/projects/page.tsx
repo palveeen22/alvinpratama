@@ -1,12 +1,12 @@
 import React from 'react'
 import { MotionArticle, MotionDiv, MotionSection } from '@/components/MotionClient'
 import { projects } from '@/data';
-import ProjectCard from '@/components/ui/ProjectCard';
 import { useTranslations } from 'next-intl';
 import { getUrl } from '@/lib/urls';
 import { getHeaders } from '@/lib/getHeaders';
 import { Metadata } from 'next';
 import { getMetadata } from '@/lib/metadata';
+import { ProjectCard } from '../latest/_components/project-card';
 
 export const generateMetadata = async ({ params }: {
   params: Promise<{ locale: string }>
@@ -58,7 +58,7 @@ const ProjectPage = () => {
 
   return (
     <MotionSection
-      className='w-full flex flex-col gap-14 md:gap-20 flex-grow h-screen"'
+      className='w-full flex flex-col gap-14 md:gap-20 flex-grow'
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -77,10 +77,10 @@ const ProjectPage = () => {
         className='flex flex-col gap-6'
         variants={sectionVariants}
       >
-        <header className='flex w-full flex-row items-center justify-between gap-2'>
+        {/* <header className='flex w-full flex-row items-center justify-between gap-2'>
           <h3 className='text-lg'>{t("lastProject")}</h3>
-        </header>
-        <MotionDiv
+        </header> */}
+        {/* <MotionDiv
           className='grid grid-cols-1 lg:grid-cols-2 gap-4'
           variants={containerVariants}
         >
@@ -89,7 +89,8 @@ const ProjectPage = () => {
               <ProjectCard project={project} />
             </MotionDiv>
           ))}
-        </MotionDiv>
+        </MotionDiv> */}
+        <ProjectCard project={projects} />
       </MotionArticle>
     </MotionSection>
   )
