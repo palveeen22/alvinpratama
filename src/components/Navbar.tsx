@@ -20,7 +20,7 @@ const Navbar = () => {
           <div className="relative w-8 h-8 flex items-center justify-center">
             <Image
               src="/assets/me.jpeg"
-              alt="Kalpataru - The first indonesian restaurant"
+              alt="Alvin Pratama | Software Engineer & iOS Developer Enthusiasts "
               fill
               className="object-cover rounded-full"
               sizes="32px"
