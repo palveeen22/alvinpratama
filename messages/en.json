@@ -36,5 +36,9 @@
 		"authorBio": "A passionate developer focused on creating better web experiences through clean, accessible code and thoughtful UX design. I write about web development, performance optimization, and design patterns.",
 		"pageTitle": "Latest Articles",
 		"pageDescription": "Explore technical tips, personal development notes, and lessons learned from real-world coding."
+	},
+	"pdf": {
+		"mine": "My Resume",
+		"download": "📥 Download PDF"
 	}
 }
