@@ -268,7 +268,7 @@ export default function BlogDetailPage({ params }: { params: { slug: string, loc
           {post.coverImage && (
             <MotionDiv
               variants={itemVariants}
-              className="relative aspect-video rounded-xl overflow-hidden mb-12 shadow-lg"
+              className="relative aspect-video rounded-xl overflow-hidden mb-12"
             >
               <Image
                 src={post.coverImage}
@@ -289,6 +289,63 @@ export default function BlogDetailPage({ params }: { params: { slug: string, loc
         >
           {processedContent}
         </MotionDiv>
+
+        <div className='w-full grid grid-cols-3 gap-2'>
+          {post.image1 && (
+            <MotionDiv
+              variants={itemVariants}
+              className=""
+            >
+              <div className="sticky top-8">
+                <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-lg">
+                  <Image
+                    src={post.image1}
+                    alt={`${post.title} - sidebar image`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 384px"
+                  />
+                </div>
+              </div>
+            </MotionDiv>
+          )}
+          {post.image2 && (
+            <MotionDiv
+              variants={itemVariants}
+              className=""
+            >
+              <div className="sticky top-8">
+                <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-lg">
+                  <Image
+                    src={post.image2}
+                    alt={`${post.title} - sidebar image`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 384px"
+                  />
+                </div>
+              </div>
+            </MotionDiv>
+          )}
+          {post.image3 && (
+            <MotionDiv
+              variants={itemVariants}
+              className=""
+            >
+              <div className="sticky top-8">
+                <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-lg">
+                  <Image
+                    src={post.image3}
+                    alt={`${post.title} - sidebar image`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 384px"
+                  />
+                </div>
+              </div>
+            </MotionDiv>
+          )}
+        </div>
       </MotionDiv>
     </article>
   );
