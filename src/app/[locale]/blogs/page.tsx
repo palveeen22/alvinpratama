@@ -1,10 +1,8 @@
 import React from 'react';
-import { BlogGrid } from './_components/blog-grid';
 import { useLocale, useTranslations } from 'next-intl';
 import { MotionArticle, MotionDiv, MotionSection } from '@/components/MotionClient';
 import { Metadata } from 'next';
 import { getUrl } from '@/lib/urls';
-import { getHeaders } from '@/lib/getHeaders';
 import { getMetadata } from '@/lib/metadata';
 import { blogPosts } from '@/data/data';
 import Link from 'next/link';
@@ -75,25 +73,24 @@ export default function BlogsPage() {
       </MotionArticle>
       <div
         className='flex flex-col gap-4'>
-        {blogPosts?.map((blog, idx) => (
-          <MotionDiv
-            variants={cardVariants}
-            key={idx}
-          >
-            <Link
-              href={`/${locale}/blogs/${blog.slug}`}
-              key={idx}
-              className='group flex flex-col md:flex-row md:justify-between items-start md:items-center gap-2 md:gap-4 text-sm md:text-base'
-            >
-              <span className='group-hover:underline decoration-wavy underline-offset-4'>
-                {blog?.title}
-              </span>
-              <span className='self-end md:self-auto'>
-                {formatBlogDate(blog?.createdAt)}
-              </span>
-            </Link>
-          </MotionDiv>
-        ))}
+        {blogPosts
+          ?.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+          .map((blog, idx) => (
+            <MotionDiv variants={cardVariants} key={idx}>
+              <Link
+                href={`/${locale}/blogs/${blog.slug}`}
+                key={idx}
+                className='group flex flex-col md:flex-row md:justify-between items-start md:items-center gap-2 md:gap-4 text-sm md:text-base'
+              >
+                <span className='group-hover:underline decoration-wavy underline-offset-4'>
+                  {blog?.title}
+                </span>
+                <span className='self-end md:self-auto'>
+                  {formatBlogDate(blog?.createdAt)}
+                </span>
+              </Link>
+            </MotionDiv>
+          ))}
       </div>
     </MotionSection>
   );
