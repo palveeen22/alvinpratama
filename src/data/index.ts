@@ -43,7 +43,7 @@ export const projects = [
     image: "/assets/currated.png",
     title: "Curated Community London",
     desc: "A members-only social app designed to connect friendly people nearby, making it feel like an intimate yet massive friend group.",
-    stacks: ["Node.js", "React Native", "MongoDB", "Mongoose", "Google Maps", "Redux Toolkit"],
+    stacks: ["Node.js", "React Native", "MongoDB", "Mongoose", "Google Maps", "Zustand", "React Navigation"],
     keywords: ["social app", "community", "friendship", "mobile app"],
     features: [
       "User matching based on location and interests",
@@ -79,6 +79,39 @@ export const projects = [
     ],
     metaTitle: "WaterHub | Digital Solution Showcase",
     metaDescription: "Indonesia's first quota-based smart water refill station, accessible through a mobile app. Explore how this project uses modern technologies to serve its target audience effectively."
+  },
+  {
+    id: '1013',
+    slug: "voltron",
+    url: "https://voltron.id",
+    image: "/assets/volton.webp",
+    title: "Voltron",
+    desc: "Indonesia’s fastest-growing electric vehicle charging provider (SPKLU), with a mobile app for easy EV charging management.",
+    stacks: [
+      "TypeScript",
+      "React Native",
+      "Apollo GraphQL",
+      "Zustand",
+      "Native Modules (iOS/Android permissions, notifications, Bluetooth, geolocation)",
+      "React Navigation",
+      "E-wallet payment integration"
+    ],
+    keywords: ["EV charging", "mobile app", "Indonesia", "smart mobility"],
+    features: [
+      "Find nearest EV charging stations quickly and easily",
+      "Track and control charging sessions in real-time",
+      "View charging history and receive notifications",
+      "Seamless e-wallet payment integration",
+      "Native permissions and device integration (Bluetooth, geolocation, notifications)"
+    ],
+    architectureHighlights: [
+      "React Native front-end with Zustand state management",
+      "Apollo GraphQL integration for backend communication",
+      "Native modules for device-specific operations on iOS and Android",
+      "React Navigation for multi-platform navigation"
+    ],
+    metaTitle: "Voltron | Digital Solution Showcase",
+    metaDescription: "Voltron is Indonesia’s leading EV charging provider with a mobile app that enables users to find, track, and pay for EV charging seamlessly. Built using React Native, Apollo GraphQL, Zustand, and native integrations for iOS and Android."
   },
   {
     id: '1003',
@@ -146,28 +179,28 @@ export const projects = [
     metaTitle: "Walkies | Mobile & Web App Showcase",
     metaDescription: "A fictional dog-walking service app, showcasing full UI/UX design and responsiveness across devices. Explore how this project uses modern technologies to serve its target audience effectively."
   },
-  {
-    id: '1006',
-    slug: "canvalon",
-    url: "https://canva-contributor.vercel.app/",
-    // image: "/images/projects/canvalon.jpg",
-    title: "Canvalon",
-    desc: "A collaborative whiteboard web app using Socket.IO for real-time multi-user drawing sessions.",
-    stacks: ["TypeScript", "ReactJS", "TailwindCSS", "Redux", "Node.js", "Socket.IO"],
-    keywords: ["whiteboard", "real-time", "Socket.IO", "collaboration"],
-    features: [
-      "Multi-user real-time drawing",
-      "Session-based room joining",
-      "Live cursor sharing"
-    ],
-    architectureHighlights: [
-      "Real-time communication with WebSockets",
-      "Node.js backend server",
-      "Redux for session and user state management"
-    ],
-    metaTitle: "Canvalon | Mobile & Web App Showcase",
-    metaDescription: "A collaborative whiteboard web app using Socket.IO for real-time multi-user drawing sessions. Explore how this project uses modern technologies to serve its target audience effectively."
-  },
+  // {
+  //   id: '1006',
+  //   slug: "canvalon",
+  //   url: "https://canva-contributor.vercel.app/",
+  //   // image: "/images/projects/canvalon.jpg",
+  //   title: "Canvalon",
+  //   desc: "A collaborative whiteboard web app using Socket.IO for real-time multi-user drawing sessions.",
+  //   stacks: ["TypeScript", "ReactJS", "TailwindCSS", "Redux", "Node.js", "Socket.IO"],
+  //   keywords: ["whiteboard", "real-time", "Socket.IO", "collaboration"],
+  //   features: [
+  //     "Multi-user real-time drawing",
+  //     "Session-based room joining",
+  //     "Live cursor sharing"
+  //   ],
+  //   architectureHighlights: [
+  //     "Real-time communication with WebSockets",
+  //     "Node.js backend server",
+  //     "Redux for session and user state management"
+  //   ],
+  //   metaTitle: "Canvalon | Mobile & Web App Showcase",
+  //   metaDescription: "A collaborative whiteboard web app using Socket.IO for real-time multi-user drawing sessions. Explore how this project uses modern technologies to serve its target audience effectively."
+  // },
   {
     id: '1007',
     slug: "pesanaja",
@@ -190,50 +223,50 @@ export const projects = [
     metaTitle: "Pesanaja | Mobile & Web App Showcase",
     metaDescription: "A grocery delivery platform with Google Maps integration and online payments using Xendit API. Explore how this project uses modern technologies to serve its target audience effectively."
   },
-  {
-    id: '1008',
-    slug: "aliexpress-ru-clone",
-    url: "https://github.com/palveeen22/next-js-fullstack-aliexpress-clone",
-    image: "/assets/aliexpres-clone.png",
-    title: "Aliexpress RU - Clone",
-    desc: "A full-stack clone of AliExpress built with Next.js, optimized for performance, SEO, and security.",
-    stacks: ["TypeScript", "Next.js", "TailwindCSS", "MongoDB", "Zustand"],
-    keywords: ["e-commerce", "AliExpress", "Next.js", "clone project"],
-    features: [
-      "Product listing and search",
-      "Shopping cart and order management",
-      "User authentication and profiles"
-    ],
-    architectureHighlights: [
-      "Next.js API routes for backend logic",
-      "MongoDB database for product data",
-      "Zustand for global state management"
-    ],
-    metaTitle: "Aliexpress RU - Clone | Clone Project Showcase",
-    metaDescription: "A full-stack clone of AliExpress built with Next.js, optimized for performance, SEO, and security. Explore how this project uses modern technologies to serve its target audience effectively."
-  },
-  {
-    id: '1009',
-    slug: "instagram-clone-app",
-    url: "https://github.com/H8-FSJS-P3S6/gc01-palveeen22",
-    // image: "/images/projects/instagram-clone.jpg",
-    title: "Instagram Clone App",
-    desc: "A mobile-first project inspired by Instagram, developed with a focus on GraphQL and real-time features.",
-    stacks: ["TypeScript", "React Native", "TailwindCSS", "MongoDB", "Apollo GraphQL", "Redis"],
-    keywords: ["mobile app", "Instagram clone", "social media", "React Native"],
-    features: [
-      "Post creation and feeds",
-      "Real-time chat and notifications",
-      "Profile and following system"
-    ],
-    architectureHighlights: [
-      "GraphQL APIs using Apollo",
-      "Real-time updates with Redis pub/sub",
-      "Scalable architecture for mobile platforms"
-    ],
-    metaTitle: "Instagram Clone App | Clone Project Showcase",
-    metaDescription: "A mobile-first project inspired by Instagram, developed with a focus on GraphQL and real-time features. Explore how this project uses modern technologies to serve its target audience effectively."
-  },
+  // {
+  //   id: '1008',
+  //   slug: "aliexpress-ru-clone",
+  //   url: "https://github.com/palveeen22/next-js-fullstack-aliexpress-clone",
+  //   image: "/assets/aliexpres-clone.png",
+  //   title: "Aliexpress RU - Clone",
+  //   desc: "A full-stack clone of AliExpress built with Next.js, optimized for performance, SEO, and security.",
+  //   stacks: ["TypeScript", "Next.js", "TailwindCSS", "MongoDB", "Zustand"],
+  //   keywords: ["e-commerce", "AliExpress", "Next.js", "clone project"],
+  //   features: [
+  //     "Product listing and search",
+  //     "Shopping cart and order management",
+  //     "User authentication and profiles"
+  //   ],
+  //   architectureHighlights: [
+  //     "Next.js API routes for backend logic",
+  //     "MongoDB database for product data",
+  //     "Zustand for global state management"
+  //   ],
+  //   metaTitle: "Aliexpress RU - Clone | Clone Project Showcase",
+  //   metaDescription: "A full-stack clone of AliExpress built with Next.js, optimized for performance, SEO, and security. Explore how this project uses modern technologies to serve its target audience effectively."
+  // },
+  // {
+  //   id: '1009',
+  //   slug: "instagram-clone-app",
+  //   url: "https://github.com/H8-FSJS-P3S6/gc01-palveeen22",
+  //   // image: "/images/projects/instagram-clone.jpg",
+  //   title: "Instagram Clone App",
+  //   desc: "A mobile-first project inspired by Instagram, developed with a focus on GraphQL and real-time features.",
+  //   stacks: ["TypeScript", "React Native", "TailwindCSS", "MongoDB", "Apollo GraphQL", "Redis"],
+  //   keywords: ["mobile app", "Instagram clone", "social media", "React Native"],
+  //   features: [
+  //     "Post creation and feeds",
+  //     "Real-time chat and notifications",
+  //     "Profile and following system"
+  //   ],
+  //   architectureHighlights: [
+  //     "GraphQL APIs using Apollo",
+  //     "Real-time updates with Redis pub/sub",
+  //     "Scalable architecture for mobile platforms"
+  //   ],
+  //   metaTitle: "Instagram Clone App | Clone Project Showcase",
+  //   metaDescription: "A mobile-first project inspired by Instagram, developed with a focus on GraphQL and real-time features. Explore how this project uses modern technologies to serve its target audience effectively."
+  // },
   {
     id: '1010',
     slug: "turun-tangan",
