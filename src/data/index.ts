@@ -11,40 +11,14 @@ export const allPosts = [
 
 export const projects = [
   {
-    id: "1012",
-    slug: "fxx-app",
-    url: "https://fxx-app.vercel.app/en",
-    image: "/assets/fxx-cover.png",
-    title: "Fxx App",
-    desc: "An MVP platform designed to help international students find rental apartments in Saint Petersburg.",
-    stacks: ["Next.js", "TailwindCSS", "TypeScript", "i18next"],
-    keywords: ["student housing", "Saint Petersburg", "international students", "rental platform", "apartment search"],
-    features: [
-      "Apartment listings with key details (price, location, amenities)",
-      "Multilingual support (English, Russian, Chinese)",
-      "Favorites feature for saved apartments",
-      "Responsive design for mobile and desktop",
-      "Basic contact system for connecting with landlords or agents"
-    ],
-    architectureHighlights: [
-      "Built with Next.js App Router and TypeScript for modern development standards",
-      "i18next for multilingual support",
-      "TailwindCSS for responsive and clean UI",
-      "Static and server-rendered pages for performance",
-      "Scalable layout ready for expansion to other cities"
-    ],
-    metaTitle: "Fxx App | for International Students Showcase",
-    metaDescription: "An MVP platform designed to help international students find rental apartments in Saint Petersburg. Explore how this project uses modern technologies to serve its target audience effectively."
-  },
-  {
     id: '1001',
     slug: "curated-community-london",
-    url: "https://apps.apple.com/us/app/curated-community/id6503678224",
+    url: "https://curated-community.com/",
     image: "/assets/currated.png",
     title: "Curated Community London",
-    desc: "A members-only social app designed to connect friendly people nearby, making it feel like an intimate yet massive friend group.",
-    stacks: ["Node.js", "React Native", "MongoDB", "Mongoose", "Google Maps", "Zustand", "React Navigation"],
-    keywords: ["social app", "community", "friendship", "mobile app"],
+    desc: "A members-only social app designed to connect friendly people nearby — making it feel like an intimate yet massive friend group. Through the app, members can also connect with local clubs and communities, discover hangout spots, enjoy exclusive price discounts and promotions, join local events directly from the app, make donations to community causes, and more — all in one seamless social experience.",
+    stacks: ["Node.js", "React Native", "Typescript", "NextJs", "MongoDB", "Mongoose", "Google Maps", "Zustand", "React Navigation", "Stripe"],
+    keywords: ["social app", "community", "friendship", "mobile app", "Hangout", "events"],
     features: [
       "User matching based on location and interests",
       "Private messaging and friend suggestions",
@@ -56,7 +30,7 @@ export const projects = [
       "Real-time location updates via Google Maps API"
     ],
     metaTitle: "Curated Community London | for Social Impact Showcase",
-    metaDescription: "A members-only social app designed to connect friendly people nearby, making it feel like an intimate yet massive friend group. Explore how this project uses modern technologies to serve its target audience effectively."
+    metaDescription: "Through the app, members can also connect with local clubs and communities, discover hangout spots, enjoy exclusive price discounts and promotions, join local events directly from the app, make donations to community causes, and more — all in one seamless social experience. Explore how this project uses modern technologies to serve its target audience effectively."
   },
   {
     id: '1002',
@@ -114,26 +88,48 @@ export const projects = [
     metaDescription: "Voltron is Indonesia’s leading EV charging provider with a mobile app that enables users to find, track, and pay for EV charging seamlessly. Built using React Native, Apollo GraphQL, Zustand, and native integrations for iOS and Android."
   },
   {
-    id: '1003',
-    slug: "pintar-ai",
-    url: "https://github.com/Prevferr/Pintar-Ai-Next-app",
-    image: "/assets/open-ai.png",
-    title: "Pintar AI",
-    desc: "A web app integrating OpenAI to provide keyword-summarized research and smart project recommendations for investors.",
-    stacks: ["TypeScript", "React", "Next.js", "TailwindCSS", "Zustand"],
-    keywords: ["AI", "OpenAI", "investment", "web app"],
+    id: '1010',
+    slug: "turun-tangan",
+    url: "https://turuntangan.id/",
+    image: "/assets/turun-tangan.png",
+    title: "Turun Tangan",
+    desc: "A national volunteer network focusing on social, humanitarian, and educational movements across Indonesia.",
+    stacks: ["JavaScript", "React", "TailwindCSS", "Redux"],
+    keywords: ["nonprofit", "volunteering", "social movement", "Indonesia"],
     features: [
-      "Research keyword summarization",
-      "Investor project matching",
-      "OpenAI GPT-based recommendations"
+      "Volunteer registration and profile management",
+      "Event management and participation tracking",
+      "Donation integration"
     ],
     architectureHighlights: [
-      "Next.js server-side rendering for SEO optimization",
-      "State management with Zustand",
-      "OpenAI API integration with efficient caching"
+      "Responsive web app with React and TailwindCSS",
+      "Global state management with Redux",
+      "CMS-like structure for event updates"
     ],
-    metaTitle: "Pintar AI | Digital Solution Showcase",
-    metaDescription: "A web app integrating OpenAI to provide keyword-summarized research and smart project recommendations for investors. Explore how this project uses modern technologies to serve its target audience effectively."
+    metaTitle: "Turun Tangan | for Social Impact Showcase",
+    metaDescription: "A national volunteer network focusing on social, humanitarian, and educational movements across Indonesia. Explore how this project uses modern technologies to serve its target audience effectively."
+  },
+  {
+    id: '1011',
+    slug: "belinsky-studio",
+    url: "https://belinskyproduction.com/",
+    image: "/assets/belinsky.png",
+    title: "Belinsky Studio",
+    desc: "A creative production house specializing in photography and filmmaking, delivering high-quality visual content.",
+    stacks: ["JavaScript", "React", "TailwindCSS", "Content Layer"],
+    keywords: ["photography", "filmmaking", "studio", "creative production"],
+    features: [
+      "Portfolio showcase for photography and film",
+      "Contact and booking forms",
+      "Responsive grid layouts"
+    ],
+    architectureHighlights: [
+      "Static site generation using Content Layer",
+      "Responsive UI with TailwindCSS",
+      "Optimized SEO and fast load time"
+    ],
+    metaTitle: "Belinsky Studio | Digital Solution Showcase",
+    metaDescription: "A creative production house specializing in photography and filmmaking, delivering high-quality visual content. Explore how this project uses modern technologies to serve its target audience effectively."
   },
   {
     id: '1004',
@@ -156,6 +152,54 @@ export const projects = [
     ],
     metaTitle: "WebcamToy | Digital Solution Showcase",
     metaDescription: "A webcam app that lets users capture photos with filters and effects directly from their browser. Explore how this project uses modern technologies to serve its target audience effectively."
+  },
+  {
+    id: "1012",
+    slug: "fxx-app",
+    url: "https://fxx-app.vercel.app/en",
+    image: "/assets/fxx-cover.png",
+    title: "Fxx App",
+    desc: "An MVP platform designed to help international students find rental apartments in Saint Petersburg.",
+    stacks: ["Next.js", "TailwindCSS", "TypeScript", "i18next"],
+    keywords: ["student housing", "Saint Petersburg", "international students", "rental platform", "apartment search"],
+    features: [
+      "Apartment listings with key details (price, location, amenities)",
+      "Multilingual support (English, Russian, Chinese)",
+      "Favorites feature for saved apartments",
+      "Responsive design for mobile and desktop",
+      "Basic contact system for connecting with landlords or agents"
+    ],
+    architectureHighlights: [
+      "Built with Next.js App Router and TypeScript for modern development standards",
+      "i18next for multilingual support",
+      "TailwindCSS for responsive and clean UI",
+      "Static and server-rendered pages for performance",
+      "Scalable layout ready for expansion to other cities"
+    ],
+    metaTitle: "Fxx App | for International Students Showcase",
+    metaDescription: "An MVP platform designed to help international students find rental apartments in Saint Petersburg. Explore how this project uses modern technologies to serve its target audience effectively."
+  },
+  {
+    id: '1003',
+    slug: "pintar-ai",
+    url: "https://github.com/Prevferr/Pintar-Ai-Next-app",
+    image: "/assets/open-ai.png",
+    title: "Pintar AI",
+    desc: "A web app integrating OpenAI to provide keyword-summarized research and smart project recommendations for investors.",
+    stacks: ["TypeScript", "React", "Next.js", "TailwindCSS", "Zustand"],
+    keywords: ["AI", "OpenAI", "investment", "web app"],
+    features: [
+      "Research keyword summarization",
+      "Investor project matching",
+      "OpenAI GPT-based recommendations"
+    ],
+    architectureHighlights: [
+      "Next.js server-side rendering for SEO optimization",
+      "State management with Zustand",
+      "OpenAI API integration with efficient caching"
+    ],
+    metaTitle: "Pintar AI | Digital Solution Showcase",
+    metaDescription: "A web app integrating OpenAI to provide keyword-summarized research and smart project recommendations for investors. Explore how this project uses modern technologies to serve its target audience effectively."
   },
   {
     id: '1005',
@@ -267,50 +311,6 @@ export const projects = [
   //   metaTitle: "Instagram Clone App | Clone Project Showcase",
   //   metaDescription: "A mobile-first project inspired by Instagram, developed with a focus on GraphQL and real-time features. Explore how this project uses modern technologies to serve its target audience effectively."
   // },
-  {
-    id: '1010',
-    slug: "turun-tangan",
-    url: "https://turuntangan.id/",
-    image: "/assets/turun-tangan.png",
-    title: "Turun Tangan",
-    desc: "A national volunteer network focusing on social, humanitarian, and educational movements across Indonesia.",
-    stacks: ["JavaScript", "React", "TailwindCSS", "Redux"],
-    keywords: ["nonprofit", "volunteering", "social movement", "Indonesia"],
-    features: [
-      "Volunteer registration and profile management",
-      "Event management and participation tracking",
-      "Donation integration"
-    ],
-    architectureHighlights: [
-      "Responsive web app with React and TailwindCSS",
-      "Global state management with Redux",
-      "CMS-like structure for event updates"
-    ],
-    metaTitle: "Turun Tangan | for Social Impact Showcase",
-    metaDescription: "A national volunteer network focusing on social, humanitarian, and educational movements across Indonesia. Explore how this project uses modern technologies to serve its target audience effectively."
-  },
-  {
-    id: '1011',
-    slug: "belinsky-studio",
-    url: "https://belinskyproduction.com/",
-    image: "/assets/belinsky.png",
-    title: "Belinsky Studio",
-    desc: "A creative production house specializing in photography and filmmaking, delivering high-quality visual content.",
-    stacks: ["JavaScript", "React", "TailwindCSS", "Content Layer"],
-    keywords: ["photography", "filmmaking", "studio", "creative production"],
-    features: [
-      "Portfolio showcase for photography and film",
-      "Contact and booking forms",
-      "Responsive grid layouts"
-    ],
-    architectureHighlights: [
-      "Static site generation using Content Layer",
-      "Responsive UI with TailwindCSS",
-      "Optimized SEO and fast load time"
-    ],
-    metaTitle: "Belinsky Studio | Digital Solution Showcase",
-    metaDescription: "A creative production house specializing in photography and filmmaking, delivering high-quality visual content. Explore how this project uses modern technologies to serve its target audience effectively."
-  }
 ];
 
 
@@ -319,12 +319,12 @@ export const projectsLatest = [
   {
     id: '1001',
     slug: "curated-community-london",
-    url: "https://apps.apple.com/us/app/curated-community/id6503678224",
+    url: "https://curated-community.com/",
     image: "/assets/currated.png",
     title: "Curated Community London",
-    desc: "A members-only social app designed to connect friendly people nearby, making it feel like an intimate yet massive friend group.",
-    stacks: ["Node.js", "React Native", "MongoDB", "Mongoose", "Google Maps", "Redux Toolkit"],
-    keywords: ["social app", "community", "friendship", "mobile app"],
+    desc: "A members-only social app designed to connect friendly people nearby — making it feel like an intimate yet massive friend group. Through the app, members can also connect with local clubs and communities, discover hangout spots, enjoy exclusive price discounts and promotions, join local events directly from the app, make donations to community causes, and more — all in one seamless social experience.",
+    stacks: ["Node.js", "React Native", "Typescript", "NextJs", "MongoDB", "Mongoose", "Google Maps", "Zustand", "React Navigation", "Stripe"],
+    keywords: ["social app", "community", "friendship", "mobile app", "Hangout", "events"],
     features: [
       "User matching based on location and interests",
       "Private messaging and friend suggestions",
