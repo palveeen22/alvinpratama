@@ -7,7 +7,7 @@ const config = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-	],
+  ],
   prefix: "",
   theme: {
     container: {
@@ -67,10 +67,21 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        'music-bar': {
+          '0%, 100%': {
+            height: '40%',
+          },
+          '50%': {
+            height: '100%',
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        'music-bar-1': 'music-bar 0.8s ease-in-out infinite',
+        'music-bar-2': 'music-bar 0.9s ease-in-out infinite 0.2s',
+        'music-bar-3': 'music-bar 1s ease-in-out infinite 0.4s',
       },
     },
   },
