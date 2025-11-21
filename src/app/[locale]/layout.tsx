@@ -11,6 +11,9 @@ import { getUrl } from "@/lib/urls";
 import { getHeaders } from "@/lib/getHeaders";
 import { getMetadata } from "@/lib/metadata";
 import { statTitle } from "@/data/metakey";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
+import { notFound } from "next/navigation";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -27,28 +30,47 @@ export const generateMetadata = async (): Promise<Metadata> => {
   });
 };
 
-interface RootLayout {
-  children: React.ReactNode;
-  params: {
-    locale: string;
-  }
+interface RootLayoutProps {
+  children: React.ReactNode
+  params: Promise<{ locale: string }>
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-  params: { locale }
-}: Readonly<RootLayout>) {
+  params // ⚠️ Jangan destructure di parameter
+}: Readonly<RootLayoutProps>) {
+  // ✅ Await params dulu
+  const { locale } = await params
+  
+  // Validate locale
+  if (!locale.includes(locale)) {
+    notFound()
+  }
+
+  // ✅ Get messages for next-intl
+  const messages = await getMessages()
+
   return (
-    <html className={cx(GeistSans.variable, GeistMono.variable)} lang={locale}>
+    <html 
+      className={cx(GeistSans.variable, GeistMono.variable)} 
+      lang={locale}
+      suppressHydrationWarning
+    >
       <body>
-        <ThemeProvider attribute='class' enableSystem disableTransitionOnChange>
-          <main className='mx-auto flex min-h-screen max-w-4xl flex-col flex-wrap gap-10 px-6 md:py-12 py-4 md:gap-16'>
-            <Navbar />
-            {children}
-            <Footer />
-          </main>
-        </ThemeProvider>
+        <NextIntlClientProvider messages={messages}>
+          <ThemeProvider 
+            attribute='class' 
+            enableSystem 
+            disableTransitionOnChange
+          >
+            <main className='mx-auto flex min-h-screen max-w-4xl flex-col flex-wrap gap-10 px-6 md:py-12 py-4 md:gap-16'>
+              <Navbar />
+              {children}
+              <Footer />
+            </main>
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
-  );
+  )
 }
