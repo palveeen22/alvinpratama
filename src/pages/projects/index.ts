@@ -1,10 +1,9 @@
 export {
   ProjectPage,
-  metadata as metadataProjectsPage
+  generateMetadata as generateMetadataProjectsPage
 } from "./ui/ProjectsPage/ProjectsPage"
 
 export {
   ProjectPageSlug,
   generateMetadata as generateMetadataProjectPageSlug,
-  generateStaticParams as generateStaticProjectPageSlug,
 } from "./ui/ProjectPageSlug/ProjectPageSlug"

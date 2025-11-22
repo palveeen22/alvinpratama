@@ -9,6 +9,8 @@ const MotionP = motion.p;
 const MotionSpan = motion.span;
 const MotionUl = motion.ul;
 const MotionSvg = motion.svg;
+const MotionButton = motion.button;
+
 
 
 const sectionVariants = {
@@ -61,5 +63,6 @@ export {
   cardVariants,
   containerVariants,
   itemVariants,
-  fadeIn
+  fadeIn,
+  MotionButton
 }

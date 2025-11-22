@@ -1,4 +1,4 @@
 export {
   BlogsPage as default,
-  metadataBlogsPage as metadata
+  generateMetadataBlogsPage as generateMetadata
 } from "@/pages/blogs"

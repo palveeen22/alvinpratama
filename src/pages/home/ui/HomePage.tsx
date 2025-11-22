@@ -1,8 +1,7 @@
 import { useTranslations } from 'next-intl';
 import { Metadata } from 'next';
-import { getHeaders, getMetadata, getUrl, MotionArticle, MotionSection } from '@/shared/lib';
+import { containerVariants, getHeaders, getMetadata, getUrl, MotionArticle, MotionSection, sectionVariants } from '@/shared/lib';
 import { LatestPage } from '@/pages/latest';
-import { BlogsPage } from '@/pages/blogs';
 import { statTitle } from '../model/selfInfo';
 
 export const metadata = async (): Promise<Metadata> => {
@@ -15,21 +14,6 @@ export const metadata = async (): Promise<Metadata> => {
       ogUrl: url
     },
   });
-};
-
-const sectionVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
-    },
-  },
 };
 
 export const HomePage = () => {
@@ -45,12 +29,12 @@ export const HomePage = () => {
       <MotionArticle
         variants={sectionVariants}
       >
-        <h1 className='text-2xl dark:text-foreground/100 font-light text-pretty'>
+        <h1 className='text-xl md:text-2xl dark:text-foreground/100 font-light text-pretty'>
           {t('subTitle')}
         </h1>
       </MotionArticle>
-      <LatestPage />
-      <BlogsPage />
+      <LatestPage data='project' />
+      <LatestPage data='blog' />
     </MotionSection>
   )
 }

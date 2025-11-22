@@ -12,10 +12,6 @@ import { ProjectDetailsImage } from './ProjectDetailsImage';
 import { projects } from '../../model/projects';
 
 
-export async function generateStaticParams() {
-  return projects.map((p) => ({ slug: p.slug }))
-}
-
 export async function generateMetadata({ params }: { params: { slug: string, locale: string } }): Promise<Metadata> {
   const { slug, locale } = await params;
   const project = projects.find((project: TProjectDetail) => project.slug === slug);

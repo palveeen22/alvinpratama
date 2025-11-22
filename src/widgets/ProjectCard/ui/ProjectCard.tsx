@@ -107,7 +107,8 @@ export const ProjectCard = ({ project }: TProps) => {
               </h3>
               <p className="
                   text-white/85 leading-relaxed group-hover:text-white/95 
-                  transition-all duration-200 line-clamp-3 group-hover:line-clamp-none
+                  transition-all duration-200 
+                  line-clamp-3
                   /* Mobile: Smaller text */
                   text-xs
                   /* Tablet and up: Larger text */
@@ -118,7 +119,7 @@ export const ProjectCard = ({ project }: TProps) => {
             </div>
 
             {/* Enhanced Bottom Fade for Long Text */}
-            <div className="absolute bottom-0 left-0 right-0 h-8 md:h-12 bg-gradient-to-t from-black/80 to-transparent pointer-events-none group-hover:opacity-50 transition-opacity duration-300" />
+            <div className="absolute bottom-0 left-0 right-0 h-8 md:h-12 bg-gradient-to-t from-black/80 to-transparent pointer-events-none transition-opacity duration-300" />
           </div>
 
           {/* Interactive Corner Indicator */}
