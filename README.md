@@ -2,8 +2,8 @@
 
 ## 🛠️ Tech Stack
 
-- **Framework**: [Next.js 15](https://nextjs.org/) with App Router
-- **UI Library**: [React 19](https://react.dev/)
+- **Framework**: [Next.js](https://nextjs.org/) with App Router
+- **UI Library**: [React.Js](https://react.dev/)
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 - **Internationalization**: [next-intl](https://next-intl-docs.vercel.app/)
