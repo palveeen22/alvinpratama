@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl';
 import { Metadata } from 'next';
 import { containerVariants, getHeaders, getMetadata, getUrl, MotionArticle, MotionSection, sectionVariants } from '@/shared/lib';
-import { LatestPage } from '@/widgets/latest';
+import { LatestPage } from '@/pages/latest';
 import { statTitle } from '../model/selfInfo';
 
 export const metadata = async (): Promise<Metadata> => {
