@@ -1,11 +1,12 @@
 import React from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { Metadata } from 'next';
-import Link from 'next/link';
-import { formatBlogDate, getMetadata, getUrl, MotionArticle, MotionDiv, MotionSection } from '@/shared/lib';
+import { containerVariants, getMetadata, getUrl, MotionSection } from '@/shared/lib';
 import { blogPosts } from '../../model/models';
+import { Icon } from '@/widgets/Icon/ui/Icon';
+import { BlogPageCard } from './BlogPageCard';
 
-export const metadata = async ({ params }: {
+export const generateMetadata = async ({ params }: {
   params: Promise<{ locale: string }>
 }): Promise<Metadata> => {
   const { locale } = await params;
@@ -30,25 +31,6 @@ export const metadata = async ({ params }: {
   )
 };
 
-const sectionVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, x: -100 },
-  visible: { opacity: 1, x: 0 },
-};
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
-    },
-  },
-};
 
 export const BlogsPage = () => {
   const locale = useLocale();
@@ -59,34 +41,37 @@ export const BlogsPage = () => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="w-full flex flex-col gap-14 md:gap-20 flex-grow"
+      className="w-full flex flex-col gap-2 flex-grow"
     >
-      <MotionArticle
-        variants={sectionVariants}
-      >
-        <h1 className="text-3xl md:text-5xl dark:text-foreground/100 font-bold text-pretty">{t('pageTitle')}</h1>
-        {/* <p className="text-base md:text-xl break-words dark:text-foreground/80 text-pretty">{t('pageDescription')}</p> */}
-      </MotionArticle>
-      <div
-        className='flex flex-col gap-4'>
-        {blogPosts
-          ?.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
-          .map((blog, idx) => (
-            <MotionDiv variants={cardVariants} key={idx}>
-              <Link
-                href={`/${locale}/blogs/${blog.slug}`}
+      <div className='flex flex-col gap-8 md:gap-14'>
+        <span className='flex flex-col gap-2 items-center text-center'>
+          <h1 className='text-3xl md:text-5xl'>The Alvin Times</h1>
+          <h3 className='text-base md:text-xl'>where coding meets small stories ⋅ and everyday exploration</h3>
+        </span>
+        <article className='flex justify-between items-center'>
+          <div className='flex flex-col gap-2'>
+            <span className='text-sm'>Written by</span>
+            <span className='text-base'>Alvin</span>
+          </div>
+          <div className='flex flex-col gap-2'>
+            <span className='text-sm'>Connect</span>
+            <div>
+              <Icon />
+            </div>
+          </div>
+        </article>
+
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+          {blogPosts
+            ?.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+            .map((blog, idx) => (
+              <BlogPageCard
                 key={idx}
-                className='group flex flex-col md:flex-row md:justify-between items-start md:items-center gap-2 md:gap-4 text-sm md:text-base'
-              >
-                <span className='group-hover:underline decoration-wavy underline-offset-4'>
-                  {blog?.title}
-                </span>
-                <span className='self-end md:self-auto'>
-                  {formatBlogDate(blog?.createdAt)}
-                </span>
-              </Link>
-            </MotionDiv>
-          ))}
+                blog={blog}
+                locale={locale}
+              />
+            ))}
+        </div>
       </div>
     </MotionSection>
   );

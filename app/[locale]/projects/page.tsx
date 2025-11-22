@@ -1,4 +1,4 @@
 export {
   ProjectPage as default,
-  metadataProjectsPage as metadata
+  generateMetadataProjectsPage as generateMetadata
 } from "@/pages/projects"
