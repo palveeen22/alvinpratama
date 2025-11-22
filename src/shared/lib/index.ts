@@ -30,7 +30,8 @@ export {
   cardVariants,
   containerVariants,
   itemVariants,
-  fadeIn
+  fadeIn,
+  MotionButton
 } from "./motion"
 
 export {

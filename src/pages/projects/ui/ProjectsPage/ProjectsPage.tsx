@@ -5,7 +5,7 @@ import { containerVariants, getMetadata, getUrl, MotionArticle, MotionSection, s
 import { ProjectCard } from '@/widgets/ProjectCard';
 import { projects } from '../../model/projects';
 
-export const metadata = async ({ params }: {
+export const generateMetadata = async ({ params }: {
   params: Promise<{ locale: string }>
 }): Promise<Metadata> => {
   const { locale } = await params;

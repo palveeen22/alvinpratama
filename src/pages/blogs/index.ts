@@ -1,10 +1,9 @@
 export {
   BlogsPage,
-  metadata as metadataBlogsPage
+  generateMetadata as generateMetadataBlogsPage
 } from "./ui/BlogPage/BlogPage"
 
 export {
   BlogSlugPage,
   generateMetadata as generateMetadataBlogSlugPage,
-  generateStaticParams as generateStaticParamsBlogSlugPage,
 } from "./ui/BlogPageSlug/BlogSlugPage"

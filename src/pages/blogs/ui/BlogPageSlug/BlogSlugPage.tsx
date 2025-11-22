@@ -3,23 +3,13 @@ import { notFound } from 'next/navigation';
 import { HeaderBack } from '@/shared/ui/HeaderBack';
 import { useTranslations } from 'next-intl';
 import { Metadata } from 'next';
-import { getMetadata, getUrl, MotionDiv, renderMarkdown } from '@/shared/lib';
+import { getMetadata, getUrl, isSupportedLocale, MotionDiv, renderMarkdown } from '@/shared/lib';
 import { BlogHeader } from './BlogHeader';
 import { BlogContent } from './BlogContent';
 import { BlogImage } from './BlogImage';
 import { blogPosts } from '../../model/models';
 
-type SupportedLocale = 'en' | 'ru';
-
-function isSupportedLocale(locale: string): locale is SupportedLocale {
-  return locale === 'en' || locale === 'ru';
-}
-
 const flattenedBlogPosts = blogPosts.flat();
-
-export async function generateStaticParams() {
-  return flattenedBlogPosts.map((p) => ({ slug: p.slug }))
-}
 
 export async function generateMetadata({ params }: {
   params: Promise<{ slug: string, locale: string }>
