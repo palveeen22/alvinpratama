@@ -21,7 +21,7 @@ export const HomePage = () => {
 
   return (
     <MotionSection
-      className='w-full flex flex-col gap-8 md:gap-14 flex-grow'
+      className='w-full flex flex-col gap-8 md:gap-14 flex-grow bg-background'
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -29,7 +29,7 @@ export const HomePage = () => {
       <MotionArticle
         variants={sectionVariants}
       >
-        <h1 className='text-xl md:text-2xl dark:text-foreground/100 font-light text-pretty'>
+        <h1 className='text-xl md:text-2xl text-foreground font-light text-pretty'>
           {t('subTitle')}
         </h1>
       </MotionArticle>

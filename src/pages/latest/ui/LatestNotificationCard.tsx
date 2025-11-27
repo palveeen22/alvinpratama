@@ -12,7 +12,7 @@ export const LatestNotificationCard = ({
   isHovered,
 }: TProps) => (
   <MotionDiv
-    className="group relative bg-white dark:bg-[#363636] rounded-2xl overflow-hidden border border-gray-100 dark:border-[#363636]"
+    className="relative z-10 group bg-card rounded-2xl overflow-hidden"
     animate={{
       y: isHovered ? -6 : 0,
       boxShadow: isHovered
@@ -28,14 +28,14 @@ export const LatestNotificationCard = ({
       <div className="flex items-start justify-between gap-4">
         <div className="flex-1 min-w-0">
           <div className="flex items-start gap-2">
-            <h3 className="font-medium text-sm md:text-base lg:text-lg text-gray-900 dark:text-white transition-colors line-clamp-2 leading-relaxed">
+            <h3 className="font-medium text-sm md:text-base lg:text-lg text-card-foreground transition-colors line-clamp-2 leading-relaxed">
               {blog.title}
             </h3>
           </div>
         </div>
 
         <div className="flex flex-col items-end gap-2 flex-shrink-0">
-          <span className="text-xs text-gray-500 dark:text-gray-400 whitespace-nowrap font-medium">
+          <span className="text-xs text-muted-foreground whitespace-nowrap font-medium">
             {formatBlogDate(blog.createdAt)}
           </span>
         </div>

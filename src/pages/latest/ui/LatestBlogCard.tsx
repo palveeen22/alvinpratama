@@ -32,13 +32,13 @@ export const LatestBlogCard = ({ blogs, locale }: TProps) => {
         }}
         transition={{ duration: 0.3, ease: [0.4, 0.0, 0.2, 1] }}
       >
-        <span className="text-lg text-gray-900 dark:text-white">
+        <span className="text-lg text-card-foreground">
           Blogs
         </span>
         
         <MotionButton
           onClick={() => setIsExpanded(false)}
-          className="px-4 py-2 bg-gray-900 dark:bg-[#363636] text-white text-sm font-medium rounded-full hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors"
+          className="px-4 py-2 bg-card hover:bg-card/50 text-card-foreground text-sm font-medium rounded-full transition-colors"
           whileTap={{ scale: 0.95 }}
         >
           Show Less
@@ -80,7 +80,7 @@ export const LatestBlogCard = ({ blogs, locale }: TProps) => {
             {latestBlogs.length > 1 && (
               <>
                 <MotionDiv
-                  className="absolute top-2 left-2 right-2 h-full bg-white/60 dark:bg-[#363636]/60 rounded-2xl -z-10 shadow-sm"
+                  className="absolute top-2 left-2 right-2 h-full bg-white/40 dark:bg-[#363636]/40 rounded-2xl -z-10 shadow-sm"
                   initial={{ opacity: 0, y: -4 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -4 }}
@@ -88,7 +88,7 @@ export const LatestBlogCard = ({ blogs, locale }: TProps) => {
                 />
                 {latestBlogs.length > 2 && (
                   <MotionDiv
-                    className="absolute top-4 left-4 right-4 h-full bg-white/40 dark:bg-[#363636]/40 rounded-2xl -z-20 shadow-sm"
+                    className="absolute top-4 left-4 right-4 h-full bg-white/60 dark:bg-[#363636]/40 rounded-2xl -z-20 shadow-sm"
                     initial={{ opacity: 0, y: -8 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -8 }}
