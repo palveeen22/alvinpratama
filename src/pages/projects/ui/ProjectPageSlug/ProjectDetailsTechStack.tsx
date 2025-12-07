@@ -1,8 +1,8 @@
 import { getStackColor, itemVariants, MotionDiv, MotionSpan } from '@/shared/lib';
-import { TProjectDetail } from '@/shared/types';
+import { LocalizedProject } from '@/shared/types';
 import React from 'react'
 
-export const ProjectDetailsTechStack = ({ project }: { project: TProjectDetail }) => {
+export const ProjectDetailsTechStack = ({ project }: { project: LocalizedProject }) => {
   return (
     <MotionDiv
       className="mb-8"

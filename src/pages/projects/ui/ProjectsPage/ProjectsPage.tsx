@@ -1,9 +1,10 @@
 import React from 'react'
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { Metadata } from 'next';
-import { containerVariants, getMetadata, getUrl, MotionArticle, MotionSection, sectionVariants } from '@/shared/lib';
+import { containerVariants, getLocalizedProjects, getMetadata, getUrl, MotionArticle, MotionDiv, MotionSection, sectionVariants } from '@/shared/lib';
 import { ProjectCard } from '@/widgets/ProjectCard';
 import { projects } from '../../model/projects';
+import { Locale } from '@/shared/types';
 
 export const generateMetadata = async ({ params }: {
   params: Promise<{ locale: string }>
@@ -32,7 +33,10 @@ export const generateMetadata = async ({ params }: {
 
 
 export const ProjectPage = () => {
+  const locale = useLocale();
   const t = useTranslations("projectInfo")
+
+  const projectList = getLocalizedProjects(projects, locale as Locale);
 
   return (
     <MotionSection
@@ -68,7 +72,31 @@ export const ProjectPage = () => {
             </MotionDiv>
           ))}
         </MotionDiv> */}
-        <ProjectCard project={projects} />
+        <MotionDiv
+          variants={containerVariants}
+          className="
+          /* Mobile: Horizontal scroll */
+          flex overflow-x-auto gap-4 pb-4 
+          scrollbar-hide snap-x snap-mandatory
+          /* Tablet and up: Grid layout */
+          md:grid md:grid-cols-2 md:gap-2 md:overflow-visible md:pb-0
+        "
+          style={{
+            /* Custom scrollbar styles for mobile */
+            scrollbarWidth: 'none', /* Firefox */
+            msOverflowStyle: 'none', /* IE/Edge */
+          }}
+        >
+
+          {projectList.map((project, index) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              locale={locale as Locale}
+              index={index}
+            />
+          ))}
+        </MotionDiv>
       </MotionArticle>
     </MotionSection>
   )

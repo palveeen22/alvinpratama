@@ -1,7 +1,7 @@
 import { itemVariants, MotionDiv, MotionUl } from '@/shared/lib';
-import { TProjectDetail } from '@/shared/types';
+import { LocalizedProject } from '@/shared/types';
 
-export const ProjecDetailsFeature = ({ project }: { project: TProjectDetail }) => {
+export const ProjecDetailsFeature = ({ project }: { project: LocalizedProject }) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
       <MotionDiv

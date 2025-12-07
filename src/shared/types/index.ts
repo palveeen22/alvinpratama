@@ -1,2 +1,2 @@
 export type { TBlogDetails } from './BlogDetail'
-export type { TProjectDetail } from './ProjectDetail'
+export type { TProjectDetail, LocalizedProject, Locale, ProjectType } from './ProjectDetail'

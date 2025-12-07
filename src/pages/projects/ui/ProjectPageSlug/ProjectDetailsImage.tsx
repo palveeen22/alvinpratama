@@ -1,9 +1,9 @@
 import { fadeIn, MotionDiv } from '@/shared/lib';
-import { TProjectDetail } from '@/shared/types';
+import { LocalizedProject } from '@/shared/types';
 import Image from 'next/image';
 import React from 'react'
 
-export const ProjectDetailsImage = ({ project }: { project: TProjectDetail }) => {
+export const ProjectDetailsImage = ({ project }: { project: LocalizedProject }) => {
   return (
     <>
       {project?.image && (
