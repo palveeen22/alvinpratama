@@ -45,3 +45,7 @@ export type {
 export {
   ThemeProvider
 } from "./ThemeProvider"
+
+export { getLocalizedProject, getLocalizedProjects } from "./getLocalizedProject"
+
+export { getFilterLabel } from "./getFilterLabel"

@@ -1,19 +1,22 @@
 import { notFound } from 'next/navigation';
 import { HeaderBack } from '@/shared/ui/HeaderBack';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { containerVariants, getMetadata, getUrl, itemVariants, MotionDiv, MotionP } from '@/shared/lib';
+import { containerVariants, getLocalizedProject, getMetadata, getUrl, itemVariants, MotionDiv, MotionP } from '@/shared/lib';
 import { ProjectDetailsKeywoard } from './ProjectDetailsKeywoard';
 import { ProjecDetailsFeature } from './ProjecDetailsFeature';
 import { ProjectDetailsTechStack } from './ProjectDetailsTechStack';
-import { TProjectDetail } from '@/shared/types';
+import { Locale, TProjectDetail } from '@/shared/types';
 import { ProjectDetailsImage } from './ProjectDetailsImage';
 import { projects } from '../../model/projects';
 
 
 export async function generateMetadata({ params }: { params: { slug: string, locale: string } }): Promise<Metadata> {
   const { slug, locale } = await params;
+
+  const validLocale = (locale === 'en' || locale === 'ru') ? locale : 'en';
+
   const project = projects.find((project: TProjectDetail) => project.slug === slug);
 
   if (!project) {
@@ -23,36 +26,38 @@ export async function generateMetadata({ params }: { params: { slug: string, loc
     };
   }
 
-  const title = project.metaTitle
-  const description = project.metaDescription
+  const localizedProject = getLocalizedProject(project, validLocale);
+
+
   const baseUrl = getUrl({ path: '' });
   const canonicalUrl = `${baseUrl}/${locale}/projects/${slug}`;
 
 
-  return await getMetadata(
-    {
-      title: title,
-      description: description,
-      imageUrl: project.image,
-      canonicalUrl: canonicalUrl,
-      urlData: canonicalUrl,
-      openGraphArticle: {
-        ogUrl: canonicalUrl
-      }
+  return await getMetadata({
+    title: localizedProject.metaTitle,
+    description: localizedProject.metaDescription,
+    imageUrl: project.image,
+    canonicalUrl: canonicalUrl,
+    urlData: canonicalUrl,
+    openGraphArticle: {
+      ogUrl: canonicalUrl
     }
-  )
+  });
 };
 
 
 export const ProjectPageSlug = ({ params }: { params: { slug: string } }) => {
   const { slug } = params;
+  const locale = useLocale()
   const t = useTranslations("detail");
 
-  const project = projects.find((project: TProjectDetail) => project.slug === slug);
+  const rawProject = projects.find((project: TProjectDetail) => project.slug === slug);
 
-  if (!project) {
+  if (!rawProject) {
     notFound();
   }
+
+  const project = getLocalizedProject(rawProject, locale as Locale);
 
   return (
     <MotionDiv

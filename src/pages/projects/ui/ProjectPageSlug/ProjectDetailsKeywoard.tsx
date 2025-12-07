@@ -1,8 +1,8 @@
 import { itemVariants, MotionDiv, MotionSpan } from '@/shared/lib'
-import { TProjectDetail } from '@/shared/types';
+import { LocalizedProject } from '@/shared/types';
 import React from 'react'
 
-export const ProjectDetailsKeywoard = ({ project }: { project: TProjectDetail }) => {
+export const ProjectDetailsKeywoard = ({ project }: { project: LocalizedProject }) => {
   return (
     <MotionDiv
       className="mb-8"
