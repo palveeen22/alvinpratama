@@ -52,7 +52,7 @@ export const LatestPage = ({ data }: LatestPageProps) => {
                 locale={locale as Locale}
                 index={index}
               />
-            )).slice(0,2)}
+            )).slice(0,4)}
           </MotionDiv>
 
         </>

@@ -2,6 +2,189 @@ import { TProjectDetail } from '@/shared/types/ProjectDetail';
 
 export const projects: TProjectDetail[] = [
   {
+    id: '1008',
+    slug: "shout-music-platform",
+    url: "",
+    image: "/assets/shout.png",
+    title: {
+      en: "Shout – Music & Events Ecosystem",
+      ru: "Shout — Музыкальная и ивент-платформа"
+    },
+    desc: {
+      en: "Shout is a comprehensive music ecosystem connecting Artists and Fans in one platform. Artists can promote music, manage events, engage fans, and monetize content, while Fans can discover music, follow artists, attend events, and purchase tickets — all within a seamless mobile experience.",
+      ru: "Shout — это комплексная музыкальная экосистема, объединяющая артистов и поклонников на одной платформе. Артисты могут продвигать музыку, управлять мероприятиями, взаимодействовать с фанатами и монетизировать контент, а пользователи — открывать новую музыку, следить за артистами, посещать события и покупать билеты."
+    },
+    stacks: [
+      "React Native",
+      "Node.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Stripe Connect",
+      "Firebase",
+      "REST API"
+    ],
+    keywords: {
+      en: ["music app", "artists", "events", "ticketing", "fan engagement"],
+      ru: ["музыкальное приложение", "артисты", "мероприятия", "билеты", "фанаты"]
+    },
+    features: {
+      en: [
+        "Artist profile and content management",
+        "Music uploads, playlists, and streaming",
+        "Event creation, ticket sales, and attendance tracking",
+        "Fan discovery, follow system, and messaging",
+        "Stripe-based payouts and revenue tracking"
+      ],
+      ru: [
+        "Управление профилем и контентом артиста",
+        "Загрузка музыки, плейлисты и стриминг",
+        "Создание мероприятий, продажа билетов и учет посещаемости",
+        "Поиск артистов, подписки и сообщения",
+        "Выплаты и учет доходов через Stripe"
+      ]
+    },
+    architectureHighlights: {
+      en: [
+        "Scalable backend with Node.js and PostgreSQL",
+        "Secure payments and payouts via Stripe Connect",
+        "Push notifications and analytics for fan engagement"
+      ],
+      ru: [
+        "Масштабируемый backend на Node.js и PostgreSQL",
+        "Безопасные платежи и выплаты через Stripe Connect",
+        "Push-уведомления и аналитика вовлеченности"
+      ]
+    },
+    metaTitle: {
+      en: "Shout | Music & Events Mobile Platform",
+      ru: "Shout | Музыкальная мобильная платформа"
+    },
+    metaDescription: {
+      en: "Shout empowers artists to grow their audience and monetize content, while fans enjoy music discovery, events, and direct interaction — all in one modern mobile platform.",
+      ru: "Shout помогает артистам развивать аудиторию и зарабатывать, а фанатам — открывать музыку, посещать мероприятия и общаться с любимыми исполнителями."
+    }
+  },
+  {
+    id: '1010',
+    slug: "xatee-social-travel",
+    url: "",
+    image: "/assets/xatee.png",
+    title: {
+      en: "Xatee – Social Travel & Lifestyle Platform",
+      ru: "Xatee — Социальная travel-платформа"
+    },
+    desc: {
+      en: "Xatee is a global social travel platform that helps users discover unforgettable experiences worldwide — from hotels and restaurants to festivals and parties — while staying socially connected.",
+      ru: "Xatee — это глобальная социальная travel-платформа для поиска незабываемых впечатлений по всему миру: от отелей и ресторанов до фестивалей и вечеринок."
+    },
+    stacks: [
+      "React Native Expo",
+      "TypeScript",
+      "Node.js",
+      "MongoDB",
+      "Firebase",
+      "Cloud Storage"
+    ],
+    keywords: {
+      en: ["travel app", "social network", "dating", "events", "experiences"],
+      ru: ["путешествия", "социальная сеть", "знакомства", "мероприятия", "впечатления"]
+    },
+    features: {
+      en: [
+        "Global travel discovery (hotels, events, venues)",
+        "Social feed with Moments and private chats",
+        "Business promotion and advertising tools",
+        "Age-restricted Dating Zone with matching"
+      ],
+      ru: [
+        "Поиск travel-локаций и мероприятий по всему миру",
+        "Социальная лента Moments и личные чаты",
+        "Инструменты продвижения для бизнеса",
+        "Возрастная зона знакомств с матчингом"
+      ]
+    },
+    architectureHighlights: {
+      en: [
+        "Modular social platform with scalable backend",
+        "Media storage optimized for global content delivery",
+        "Secure access control for age-restricted features"
+      ],
+      ru: [
+        "Модульная архитектура с масштабируемым backend",
+        "Оптимизированное хранение медиа-контента",
+        "Безопасный контроль доступа для 18+ функций"
+      ]
+    },
+    metaTitle: {
+      en: "Xatee | Social Travel & Lifestyle App",
+      ru: "Xatee | Социальное travel-приложение"
+    },
+    metaDescription: {
+      en: "Explore the world, connect socially, promote businesses, and meet new people with Xatee — your all-in-one travel and lifestyle companion.",
+      ru: "Путешествуйте, общайтесь, продвигайте бизнес и знакомьтесь с новыми людьми вместе с Xatee."
+    }
+  },
+  {
+    id: '1009',
+    slug: "overwatch-social-streaming",
+    url: "",
+    image: "/assets/overwatch.png",
+    title: {
+      en: "OverWatch – Local Influencer Streaming",
+      ru: "OverWatch — Локальный стриминг инфлюенсеров"
+    },
+    desc: {
+      en: "OverWatch connects influencers and fans within local communities through live streaming. Influencers can go live instantly, share passions, and build communities, while fans discover nearby creators and interact in real time.",
+      ru: "OverWatch соединяет инфлюенсеров и поклонников в локальных сообществах через прямые трансляции. Создатели делятся своим контентом, а пользователи находят стримы поблизости и взаимодействуют в реальном времени."
+    },
+    stacks: [
+      "React Native Expo",
+      "TypeScript",
+      "WebRTC",
+      "Firebase",
+      "Node.js",
+      "Socket.IO"
+    ],
+    keywords: {
+      en: ["live streaming", "influencers", "social app", "local creators"],
+      ru: ["стриминг", "инфлюенсеры", "социальная сеть", "локальный контент"]
+    },
+    features: {
+      en: [
+        "Live streaming with real-time chat",
+        "Local influencer discovery",
+        "Virtual gifts and creator support",
+        "Audience interaction and community building"
+      ],
+      ru: [
+        "Прямые трансляции с чатом в реальном времени",
+        "Поиск локальных инфлюенсеров",
+        "Виртуальные подарки и поддержка создателей",
+        "Взаимодействие с аудиторией и комьюнити"
+      ]
+    },
+    architectureHighlights: {
+      en: [
+        "Real-time communication using WebRTC and Socket.IO",
+        "Expo-based rapid development and OTA updates",
+        "Scalable backend for live interactions"
+      ],
+      ru: [
+        "Связь в реальном времени через WebRTC и Socket.IO",
+        "Быстрая разработка с Expo и OTA-обновлениями",
+        "Масштабируемый backend для стриминга"
+      ]
+    },
+    metaTitle: {
+      en: "OverWatch | Local Live Streaming Platform",
+      ru: "OverWatch | Платформа локальных стримов"
+    },
+    metaDescription: {
+      en: "Discover local influencers, join live streams, and interact instantly with creators through OverWatch — a modern social streaming platform.",
+      ru: "Находите локальных инфлюенсеров, подключайтесь к прямым трансляциям и общайтесь в реальном времени с OverWatch."
+    }
+  },
+  {
     id: '1001',
     slug: "curated-community-london",
     url: "https://curated-community.com/",
@@ -322,116 +505,6 @@ export const projects: TProjectDetail[] = [
     }
   },
   {
-    id: "1012",
-    slug: "fxx-app",
-    url: "https://fxx-app.vercel.app/en",
-    image: "/assets/fxx-cover.png",
-    title: {
-      en: "Fxx App",
-      ru: "Fxx App"
-    },
-    desc: {
-      en: "An MVP platform designed to help international students find rental apartments in Saint Petersburg.",
-      ru: "MVP платформа, предназначенная для помощи иностранным студентам в поиске арендных квартир в Санкт-Петербурге."
-    },
-    stacks: ["Next.js", "TailwindCSS", "TypeScript", "i18next"],
-    keywords: {
-      en: ["student housing", "Saint Petersburg", "international students", "rental platform", "apartment search"],
-      ru: ["студенческое жилье", "Санкт-Петербург", "иностранные студенты", "платформа аренды", "поиск квартир"]
-    },
-    features: {
-      en: [
-        "Apartment listings with key details (price, location, amenities)",
-        "Multilingual support (English, Russian, Chinese)",
-        "Favorites feature for saved apartments",
-        "Responsive design for mobile and desktop",
-        "Basic contact system for connecting with landlords or agents"
-      ],
-      ru: [
-        "Объявления о квартирах с ключевыми деталями (цена, местоположение, удобства)",
-        "Многоязычная поддержка (английский, русский, китайский)",
-        "Функция избранного для сохранения квартир",
-        "Адаптивный дизайн для мобильных устройств и компьютеров",
-        "Базовая система контактов для связи с арендодателями или агентами"
-      ]
-    },
-    architectureHighlights: {
-      en: [
-        "Built with Next.js App Router and TypeScript for modern development standards",
-        "i18next for multilingual support",
-        "TailwindCSS for responsive and clean UI",
-        "Static and server-rendered pages for performance",
-        "Scalable layout ready for expansion to other cities"
-      ],
-      ru: [
-        "Построено на Next.js App Router и TypeScript для современных стандартов разработки",
-        "i18next для многоязычной поддержки",
-        "TailwindCSS для адаптивного и чистого UI",
-        "Статические и серверные страницы для производительности",
-        "Масштабируемый макет, готовый к расширению на другие города"
-      ]
-    },
-    metaTitle: {
-      en: "Fxx App | for International Students Showcase",
-      ru: "Fxx App | Витрина для иностранных студентов"
-    },
-    metaDescription: {
-      en: "An MVP platform designed to help international students find rental apartments in Saint Petersburg. Explore how this project uses modern technologies to serve its target audience effectively.",
-      ru: "MVP платформа, предназначенная для помощи иностранным студентам в поиске арендных квартир в Санкт-Петербурге. Узнайте, как этот проект использует современные технологии для эффективного обслуживания целевой аудитории."
-    }
-  },
-  {
-    id: '1003',
-    slug: "pintar-ai",
-    url: "https://github.com/Prevferr/Pintar-Ai-Next-app",
-    image: "/assets/open-ai.png",
-    title: {
-      en: "Pintar AI",
-      ru: "Pintar AI"
-    },
-    desc: {
-      en: "A web app integrating OpenAI to provide keyword-summarized research and smart project recommendations for investors.",
-      ru: "Веб-приложение, интегрирующее OpenAI для предоставления исследований, суммированных по ключевым словам, и умных рекомендаций проектов для инвесторов."
-    },
-    stacks: ["TypeScript", "React", "Next.js", "TailwindCSS", "Zustand"],
-    keywords: {
-      en: ["AI", "OpenAI", "investment", "web app"],
-      ru: ["ИИ", "OpenAI", "инвестиции", "веб-приложение"]
-    },
-    features: {
-      en: [
-        "Research keyword summarization",
-        "Investor project matching",
-        "OpenAI GPT-based recommendations"
-      ],
-      ru: [
-        "Суммирование исследований по ключевым словам",
-        "Подбор проектов для инвесторов",
-        "Рекомендации на основе OpenAI GPT"
-      ]
-    },
-    architectureHighlights: {
-      en: [
-        "Next.js server-side rendering for SEO optimization",
-        "State management with Zustand",
-        "OpenAI API integration with efficient caching"
-      ],
-      ru: [
-        "Серверный рендеринг Next.js для оптимизации SEO",
-        "Управление состоянием с Zustand",
-        "Интеграция OpenAI API с эффективным кэшированием"
-      ]
-    },
-    metaTitle: {
-      en: "Pintar AI | Digital Solution Showcase",
-      ru: "Pintar AI | Витрина цифровых решений"
-    },
-    metaDescription: {
-      en: "A web app integrating OpenAI to provide keyword-summarized research and smart project recommendations for investors. Explore how this project uses modern technologies to serve its target audience effectively.",
-      ru: "Веб-приложение, интегрирующее OpenAI для предоставления исследований, суммированных по ключевым словам, и умных рекомендаций проектов для инвесторов. Узнайте, как этот проект использует современные технологии для эффективного обслуживания целевой аудитории."
-    }
-  },
-  {
     id: '1005',
     slug: "walkies",
     url: "https://github.com/H8-FSJS-P3S6/gc01-palveeen22",
@@ -486,57 +559,168 @@ export const projects: TProjectDetail[] = [
       ru: "Walkies — это универсальное приложение для ухода за питомцами, которое помогает пользователям находить ветеринаров, заказывать корм и товары для питомцев онлайн, а также бронировать надежные услуги выгула собак или присмотра за кошками. Разработано с использованием современных технологий для бесшовного опыта ухода за питомцами."
     }
   },
-  {
-    id: '1007',
-    slug: "pesanaja",
-    url: "https://pesanaja-client-react.vercel.app/",
-    image: "/assets/pesanaja.png",
-    title: {
-      en: "Pesanaja",
-      ru: "Pesanaja"
-    },
-    desc: {
-      en: "A grocery delivery platform with Google Maps integration and online payments using Xendit API.",
-      ru: "Платформа доставки продуктов с интеграцией Google Maps и онлайн-платежами через Xendit API."
-    },
-    stacks: ["JavaScript", "React", "TailwindCSS", "Ant Design", "Redux", "Node.js"],
-    keywords: {
-      en: ["e-commerce", "grocery app", "delivery", "maps integration"],
-      ru: ["электронная коммерция", "приложение продуктов", "доставка", "интеграция карт"]
-    },
-    features: {
-      en: [
-        "Product browsing and shopping cart",
-        "Delivery address selection via Maps",
-        "Secure online payment integration"
-      ],
-      ru: [
-        "Просмотр продуктов и корзина покупок",
-        "Выбор адреса доставки через карты",
-        "Интеграция безопасных онлайн-платежей"
-      ]
-    },
-    architectureHighlights: {
-      en: [
-        "Google Maps API integration",
-        "Secure payment system via Xendit",
-        "Responsive web design for mobile users"
-      ],
-      ru: [
-        "Интеграция Google Maps API",
-        "Безопасная платежная система через Xendit",
-        "Адаптивный веб-дизайн для мобильных пользователей"
-      ]
-    },
-    metaTitle: {
-      en: "Pesanaja | Mobile & Web App Showcase",
-      ru: "Pesanaja | Витрина мобильного и веб-приложения"
-    },
-    metaDescription: {
-      en: "A grocery delivery platform with Google Maps integration and online payments using Xendit API. Explore how this project uses modern technologies to serve its target audience effectively.",
-      ru: "Платформа доставки продуктов с интеграцией Google Maps и онлайн-платежами через Xendit API. Узнайте, как этот проект использует современные технологии для эффективного обслуживания целевой аудитории."
-    }
-  }
+  // {
+  //   id: "1012",
+  //   slug: "fxx-app",
+  //   url: "https://fxx-app.vercel.app/en",
+  //   image: "/assets/fxx-cover.png",
+  //   title: {
+  //     en: "Fxx App",
+  //     ru: "Fxx App"
+  //   },
+  //   desc: {
+  //     en: "An MVP platform designed to help international students find rental apartments in Saint Petersburg.",
+  //     ru: "MVP платформа, предназначенная для помощи иностранным студентам в поиске арендных квартир в Санкт-Петербурге."
+  //   },
+  //   stacks: ["Next.js", "TailwindCSS", "TypeScript", "i18next"],
+  //   keywords: {
+  //     en: ["student housing", "Saint Petersburg", "international students", "rental platform", "apartment search"],
+  //     ru: ["студенческое жилье", "Санкт-Петербург", "иностранные студенты", "платформа аренды", "поиск квартир"]
+  //   },
+  //   features: {
+  //     en: [
+  //       "Apartment listings with key details (price, location, amenities)",
+  //       "Multilingual support (English, Russian, Chinese)",
+  //       "Favorites feature for saved apartments",
+  //       "Responsive design for mobile and desktop",
+  //       "Basic contact system for connecting with landlords or agents"
+  //     ],
+  //     ru: [
+  //       "Объявления о квартирах с ключевыми деталями (цена, местоположение, удобства)",
+  //       "Многоязычная поддержка (английский, русский, китайский)",
+  //       "Функция и збранного для сохранения квартир",
+  //       "Адаптивный дизайн для мобильных устройств и компьютеров",
+  //       "Базовая система контактов для связи с арендодателями или агентами"
+  //     ]
+  //   },
+  //   architectureHighlights: {
+  //     en: [
+  //       "Built with Next.js App Router and TypeScript for modern development standards",
+  //       "i18next for multilingual support",
+  //       "TailwindCSS for responsive and clean UI",
+  //       "Static and server-rendered pages for performance",
+  //       "Scalable layout ready for expansion to other cities"
+  //     ],
+  //     ru: [
+  //       "Построено на Next.js App Router и TypeScript для современных стандартов разработки",
+  //       "i18next для многоязычной поддержки",
+  //       "TailwindCSS для адаптивного и чистого UI",
+  //       "Статические и серверные страницы для производительности",
+  //       "Масштабируемый макет, готовый к расширению на другие города"
+  //     ]
+  //   },
+  //   metaTitle: {
+  //     en: "Fxx App | for International Students Showcase",
+  //     ru: "Fxx App | Витрина для иностранных студентов"
+  //   },
+  //   metaDescription: {
+  //     en: "An MVP platform designed to help international students find rental apartments in Saint Petersburg. Explore how this project uses modern technologies to serve its target audience effectively.",
+  //     ru: "MVP платформа, предназначенная для помощи иностранным студентам в поиске арендных квартир в Санкт-Петербурге. Узнайте, как этот проект использует современные технологии для эффективного обслуживания целевой аудитории."
+  //   }
+  // },
+  // {
+  //   id: '1003',
+  //   slug: "pintar-ai",
+  //   url: "https://github.com/Prevferr/Pintar-Ai-Next-app",
+  //   image: "/assets/open-ai.png",
+  //   title: {
+  //     en: "Pintar AI",
+  //     ru: "Pintar AI"
+  //   },
+  //   desc: {
+  //     en: "A web app integrating OpenAI to provide keyword-summarized research and smart project recommendations for investors.",
+  //     ru: "Веб-приложение, интегрирующее OpenAI для предоставления исследований, суммированных по ключевым словам, и умных рекомендаций проектов для инвесторов."
+  //   },
+  //   stacks: ["TypeScript", "React", "Next.js", "TailwindCSS", "Zustand"],
+  //   keywords: {
+  //     en: ["AI", "OpenAI", "investment", "web app"],
+  //     ru: ["ИИ", "OpenAI", "инвестиции", "веб-приложение"]
+  //   },
+  //   features: {
+  //     en: [
+  //       "Research keyword summarization",
+  //       "Investor project matching",
+  //       "OpenAI GPT-based recommendations"
+  //     ],
+  //     ru: [
+  //       "Суммирование исследований по ключевым словам",
+  //       "Подбор проектов для инвесторов",
+  //       "Рекомендации на основе OpenAI GPT"
+  //     ]
+  //   },
+  //   architectureHighlights: {
+  //     en: [
+  //       "Next.js server-side rendering for SEO optimization",
+  //       "State management with Zustand",
+  //       "OpenAI API integration with efficient caching"
+  //     ],
+  //     ru: [
+  //       "Серверный рендеринг Next.js для оптимизации SEO",
+  //       "Управление состоянием с Zustand",
+  //       "Интеграция OpenAI API с эффективным кэшированием"
+  //     ]
+  //   },
+  //   metaTitle: {
+  //     en: "Pintar AI | Digital Solution Showcase",
+  //     ru: "Pintar AI | Витрина цифровых решений"
+  //   },
+  //   metaDescription: {
+  //     en: "A web app integrating OpenAI to provide keyword-summarized research and smart project recommendations for investors. Explore how this project uses modern technologies to serve its target audience effectively.",
+  //     ru: "Веб-приложение, интегрирующее OpenAI для предоставления исследований, суммированных по ключевым словам, и умных рекомендаций проектов для инвесторов. Узнайте, как этот проект использует современные технологии для эффективного обслуживания целевой аудитории."
+  //   }
+  // },
+
+  // {
+  //   id: '1007',
+  //   slug: "pesanaja",
+  //   url: "https://pesanaja-client-react.vercel.app/",
+  //   image: "/assets/pesanaja.png",
+  //   title: {
+  //     en: "Pesanaja",
+  //     ru: "Pesanaja"
+  //   },
+  //   desc: {
+  //     en: "A grocery delivery platform with Google Maps integration and online payments using Xendit API.",
+  //     ru: "Платформа доставки продуктов с интеграцией Google Maps и онлайн-платежами через Xendit API."
+  //   },
+  //   stacks: ["JavaScript", "React", "TailwindCSS", "Ant Design", "Redux", "Node.js"],
+  //   keywords: {
+  //     en: ["e-commerce", "grocery app", "delivery", "maps integration"],
+  //     ru: ["электронная коммерция", "приложение продуктов", "доставка", "интеграция карт"]
+  //   },
+  //   features: {
+  //     en: [
+  //       "Product browsing and shopping cart",
+  //       "Delivery address selection via Maps",
+  //       "Secure online payment integration"
+  //     ],
+  //     ru: [
+  //       "Просмотр продуктов и корзина покупок",
+  //       "Выбор адреса доставки через карты",
+  //       "Интеграция безопасных онлайн-платежей"
+  //     ]
+  //   },
+  //   architectureHighlights: {
+  //     en: [
+  //       "Google Maps API integration",
+  //       "Secure payment system via Xendit",
+  //       "Responsive web design for mobile users"
+  //     ],
+  //     ru: [
+  //       "Интеграция Google Maps API",
+  //       "Безопасная платежная система через Xendit",
+  //       "Адаптивный веб-дизайн для мобильных пользователей"
+  //     ]
+  //   },
+  //   metaTitle: {
+  //     en: "Pesanaja | Mobile & Web App Showcase",
+  //     ru: "Pesanaja | Витрина мобильного и веб-приложения"
+  //   },
+  //   metaDescription: {
+  //     en: "A grocery delivery platform with Google Maps integration and online payments using Xendit API. Explore how this project uses modern technologies to serve its target audience effectively.",
+  //     ru: "Платформа доставки продуктов с интеграцией Google Maps и онлайн-платежами через Xendit API. Узнайте, как этот проект использует современные технологии для эффективного обслуживания целевой аудитории."
+  //   }
+  // }
   // {
   //   id: '1008',
   //   slug: "aliexpress-ru-clone",
