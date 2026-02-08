@@ -5,9 +5,10 @@
 		"blog": "Blogs"
 	},
 	"selfInfo": {
-		"title": "Hey I’m Alvin 🕺🏻",
-		"subTitle": "Hey there! I'm Alvin, a full stack developer from Saint Petersburg 🕺🏻",
-		"description": "I'm a Software Engineer with expertise in Frontend and Mobile App Development. Passionate about user experience, infrastructure as code and cloud solutions. Driven to make quality code which is clean, well tested, and maintainable. Committed to constant learning and skill enhancement in new technologies and programming languages."
+		"title": "Hey there! I'm a software engineer from Saint Petersburg 🕺🏻",
+		"subTitle": "I specialize in frontend and mobile development, building web applications with React & Next.js and cross-platform mobile apps with React Native.",
+		"description": "Recently, I’ve been working more as a full-stack engineer, building backend services and deploying production systems on AWS (EC2, S3, CI/CD).",
+		"subDesc": "I use Claude Code daily - AI tooling has reshaped my workflow, helping me ship faster while staying focused on architecture, UX, and system design."
 	},
 	"coming": {
 		"text": "Coming Soon..."

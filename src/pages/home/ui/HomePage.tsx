@@ -26,13 +26,24 @@ export const HomePage = () => {
       initial="hidden"
       animate="visible"
     >
-      <MotionArticle
-        variants={sectionVariants}
-      >
-        <h1 className='text-xl md:text-2xl dark:text-foreground/100 font-light text-pretty'>
-          {t('subTitle')}
+      <MotionArticle variants={sectionVariants} className="space-y-4">
+        <h1 className="text-base md:text-lg text-foreground/80 text-pretty">
+          {t('title')}
         </h1>
+
+        <h2 className="text-base md:text-lg text-foreground/80 text-pretty">
+          {t('subTitle')}
+        </h2>
+
+        <p className="text-base md:text-lg text-foreground/80 text-pretty">
+          {t('description')}
+        </p>
+
+        <p className="text-base md:text-lg text-foreground/80 text-pretty">
+          {t('subDesc')}
+        </p>
       </MotionArticle>
+
       <LatestPage data='project' />
       <LatestPage data='blog' />
     </MotionSection>
