@@ -1,155 +1,60 @@
 'use client';
 
+import React, { useMemo } from 'react';
 import { TBlogDetails } from '@/shared/types';
-import React, { useMemo, useState } from 'react';
-import { AnimatePresence } from 'framer-motion';
-import { MotionButton, MotionDiv } from '@/shared/lib';
-import { LatestNotification } from './LatestNotification';
+import { formatBlogDate, MotionDiv } from '@/shared/lib';
 
 type TProps = {
   blogs: TBlogDetails[];
   locale: string;
 };
 
-export const LatestBlogCard = ({ blogs, locale }: TProps) => {
-  const [isExpanded, setIsExpanded] = useState<boolean>(false);
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
+export const LatestBlogCard = ({ blogs }: TProps) => {
   const latestBlogs = useMemo(() => {
     return blogs
-      .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+      .sort(
+        (a, b) =>
+          new Date(b.createdAt).getTime() -
+          new Date(a.createdAt).getTime()
+      )
       .slice(0, 3);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [blogs]);
 
   return (
-    <div className="relative">
-      <MotionDiv
-        className="flex items-center justify-between mb-4"
-        initial={{ opacity: 0, height: 0 }}
-        animate={{
-          opacity: isExpanded ? 1 : 0,
-          height: isExpanded ? 'auto' : 0,
-        }}
-        transition={{ duration: 0.3, ease: [0.4, 0.0, 0.2, 1] }}
-      >
-        <span className="text-lg text-gray-900 dark:text-white">
-          Blogs
-        </span>
-        
-        <MotionButton
-          onClick={() => setIsExpanded(false)}
-          className="px-4 py-2 bg-gray-900 dark:bg-[#363636] text-white text-sm font-medium rounded-full hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors"
-          whileTap={{ scale: 0.95 }}
+    <MotionDiv
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="space-y-3"
+    >
+      {latestBlogs.map((blog, index) => (
+        <a
+          key={blog.id}
+          href={`/blog/${blog.slug}`}
+          className="
+            group block
+            text-sm md:text-base
+            text-foreground/90
+            transition-colors
+          "
         >
-          Show Less
-        </MotionButton>
-      </MotionDiv>
-      <AnimatePresence mode="wait">
-        {!isExpanded ? (
-          <MotionDiv
-            key="collapsed"
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{
-              opacity: 0,
-              scale: 0.95,
-              transition: { duration: 0.15 }
-            }}
-            transition={{ duration: 0.2 }}
-            className="relative"
-          >
-            <div
-              onClick={(e) => {
-                e.preventDefault();
-                setIsExpanded(true);
-              }}
-              className="cursor-pointer"
+          <div className="flex items-baseline justify-between gap-4">
+            <span
+              className="
+                font-medium
+                group-hover:underline
+                group-hover:decoration-dashed
+                group-hover:underline-offset-4
+              "
             >
-              <LatestNotification
-                blog={latestBlogs[0]}
-                locale={locale}
-                index={0}
-                isHovered={false}
-                isCollapsed={true}
-                onHoverStart={() => { }}
-                onHoverEnd={() => { }}
-              />
-            </div>
+              {blog.title}
+            </span>
 
-            {/* Stacked cards behind */}
-            {latestBlogs.length > 1 && (
-              <>
-                <MotionDiv
-                  className="absolute top-2 left-2 right-2 h-full bg-white/60 dark:bg-[#363636]/60 rounded-2xl -z-10 shadow-sm"
-                  initial={{ opacity: 0, y: -4 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -4 }}
-                  transition={{ duration: 0.2, delay: 0.05 }}
-                />
-                {latestBlogs.length > 2 && (
-                  <MotionDiv
-                    className="absolute top-4 left-4 right-4 h-full bg-white/40 dark:bg-[#363636]/40 rounded-2xl -z-20 shadow-sm"
-                    initial={{ opacity: 0, y: -8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -8 }}
-                    transition={{ duration: 0.2, delay: 0.1 }}
-                  />
-                )}
-              </>
-            )}
-          </MotionDiv>
-        ) : (
-          <MotionDiv
-            key="expanded"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{
-              opacity: 0,
-              transition: { duration: 0.15 }
-            }}
-            transition={{ duration: 0.2 }}
-            className="space-y-3"
-          >
-            {latestBlogs.map((blog, index) => {
-              const isHovered = hoveredIndex === index;
-
-              return (
-                <MotionDiv
-                  key={blog.id}
-                  initial={{ opacity: 0, y: 20, scale: 0.95 }}
-                  animate={{
-                    opacity: 1,
-                    y: 0,
-                    scale: 1
-                  }}
-                  exit={{
-                    opacity: 0,
-                    y: -10,
-                    scale: 0.95,
-                    transition: { duration: 0.15 }
-                  }}
-                  transition={{
-                    duration: 0.3,
-                    delay: index * 0.08,
-                    ease: "easeOut"
-                  }}
-                >
-                  <LatestNotification
-                    blog={blog}
-                    locale={locale}
-                    index={index}
-                    isHovered={isHovered}
-                    isCollapsed={false}
-                    onHoverStart={() => setHoveredIndex(index)}
-                    onHoverEnd={() => setHoveredIndex(null)}
-                  />
-                </MotionDiv>
-              );
-            })}
-          </MotionDiv>
-        )}
-      </AnimatePresence>
-    </div>
+            <span className="text-xs text-foreground/50 whitespace-nowrap">
+              {formatBlogDate(blog.createdAt)}
+            </span>
+          </div>
+        </a>
+      ))}
+    </MotionDiv>
   );
 };
