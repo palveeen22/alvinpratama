@@ -4,7 +4,7 @@ export const projects: TProjectDetail[] = [
   {
     id: '1008',
     slug: "shout-music-platform",
-    url: "",
+    url: "https://apps.apple.com/app/shout-dev/id6749853158",
     image: "/assets/shout.png",
     title: {
       en: "Shout – Music & Events Ecosystem",
@@ -15,12 +15,13 @@ export const projects: TProjectDetail[] = [
       ru: "Shout — это комплексная музыкальная экосистема, объединяющая артистов и поклонников на одной платформе. Артисты могут продвигать музыку, управлять мероприятиями, взаимодействовать с фанатами и монетизировать контент, а пользователи — открывать новую музыку, следить за артистами, посещать события и покупать билеты."
     },
     stacks: [
-      "React Native",
+      "React Native Expo",
       "Node.js",
       "TypeScript",
       "PostgreSQL",
       "Stripe Connect",
       "Firebase",
+      "EAS",
       "REST API"
     ],
     keywords: {
@@ -67,7 +68,7 @@ export const projects: TProjectDetail[] = [
   {
     id: '1010',
     slug: "xatee-social-travel",
-    url: "",
+    url: "https://apps.apple.com/us/app/xatee/id6447569091",
     image: "/assets/xatee.png",
     title: {
       en: "Xatee – Social Travel & Lifestyle Platform",
@@ -83,6 +84,7 @@ export const projects: TProjectDetail[] = [
       "Node.js",
       "MongoDB",
       "Firebase",
+      "EAS",
       "Cloud Storage"
     ],
     keywords: {
@@ -125,9 +127,129 @@ export const projects: TProjectDetail[] = [
     }
   },
   {
+    id: '1011',
+    slug: "stygrm",
+    url: "https://apps.apple.com/us/app/stygrm/id6754942104",
+    image: "/assets/stygrm.png",
+    title: {
+      en: "Stygrm",
+      ru: "Stygrm"
+    },
+    desc: {
+      en: "Stygrm brings TikTok-style energy to fashion shopping. Scroll immersive videos from shoppers, stylists, and brands, then buy the exact pieces you love—right from the clip. Build your profile, follow creators, and get personalized recommendations that match your style.",
+      ru: "Stygrm привносит энергию TikTok в мир модного шопинга. Листайте иммерсивные видео от покупателей, стилистов и брендов, а затем покупайте именно те вещи, которые вам понравились — прямо из клипа. Создавайте профиль, подписывайтесь на авторов и получайте персонализированные рекомендации, соответствующие вашему стилю."
+    },
+    stacks: ["TypeScript", "React Native", "Expo", "Socket.IO", "Redux Toolkit", "Axios", "EAS"],
+    keywords: {
+      en: ["fashion app", "video shopping", "social commerce", "style feed", "shoppable videos", "React Native", "AI styling"],
+      ru: ["модное приложение", "видеошопинг", "социальная коммерция", "стильная лента", "покупки из видео", "React Native", "ИИ-стилист"]
+    },
+    features: {
+      en: [
+        "Shop from videos with tagged products, sizes, colors, and 1-tap checkout",
+        "Curated personalized feed of trends, looks, and drops",
+        "Smart search and filters for products, outfits, and creators",
+        "Cart, secure checkout, order history, and real-time tracking",
+        "Brand/Stylist tools: upload videos, tag products, add captions and hashtags",
+        "Analytics dashboard for brands to track engagement and sales",
+        "Profile management, favorites, and creator following",
+        "StyGPT AI assistant for styling suggestions and product picks"
+      ],
+      ru: [
+        "Покупки из видео с отмеченными товарами, размерами, цветами и покупкой в одно касание",
+        "Персонализированная лента трендов, образов и новинок",
+        "Умный поиск и фильтры для товаров, образов и авторов",
+        "Корзина, безопасная оплата, история заказов и отслеживание в реальном времени",
+        "Инструменты для брендов/стилистов: загрузка видео, отметка товаров, подписи и хэштеги",
+        "Аналитическая панель для брендов — отслеживание вовлечённости и продаж",
+        "Управление профилем, избранное и подписки на авторов",
+        "ИИ-ассистент StyGPT для стилистических рекомендаций и подбора товаров"
+      ]
+    },
+    architectureHighlights: {
+      en: [
+        "TikTok-style vertical video feed with seamless infinite scroll",
+        "In-video product tagging and instant checkout flow",
+        "AI-powered recommendation engine for personalized content and styling",
+        "Cross-platform mobile app built with React Native and Expo"
+      ],
+      ru: [
+        "Вертикальная видеолента в стиле TikTok с бесшовной бесконечной прокруткой",
+        "Отметка товаров в видео и мгновенный процесс покупки",
+        "ИИ-движок рекомендаций для персонализированного контента и стилистики",
+        "Кроссплатформенное мобильное приложение на React Native и Expo"
+      ]
+    },
+    metaTitle: {
+      en: "Stygrm | Shop Fashion from Videos — Social Commerce App",
+      ru: "Stygrm | Покупайте моду из видео — приложение социальной коммерции"
+    },
+    metaDescription: {
+      en: "Stygrm is a TikTok-style fashion shopping app where you discover trends, shop tagged products directly from videos, follow creators, and get AI-powered styling recommendations — all in one seamless experience.",
+      ru: "Stygrm — это модное приложение для шопинга в стиле TikTok, где вы открываете тренды, покупаете отмеченные товары прямо из видео, подписываетесь на авторов и получаете стилистические рекомендации от ИИ — всё в одном удобном приложении."
+    }
+  },
+  {
+    id: '1012',
+    slug: "iengie",
+    url: "https://apps.apple.com/us/app/iengie/id6745184836",
+    image: "/assets/iengie.png",
+    title: {
+      en: "iEngie",
+      ru: "iEngie"
+    },
+    desc: {
+      en: "iEngie is a centralized dashboard reporting platform that provides a comprehensive portfolio overview. It enables users to monitor building lists, track performance insights, and manage approved parties efficiently with clear visual reports and structured data.",
+      ru: "iEngie — это централизованная платформа отчётности с дашбордами, предоставляющая полный обзор портфеля. Она позволяет пользователям отслеживать списки зданий, анализировать показатели эффективности и управлять утверждёнными сторонами с помощью наглядных отчётов и структурированных данных."
+    },
+    stacks: ["Swift", "UIKit", "iOS"],
+    keywords: {
+      en: ["dashboard", "portfolio management", "building management", "reporting platform", "iOS", "Swift", "compliance"],
+      ru: ["дашборд", "управление портфелем", "управление зданиями", "платформа отчётности", "iOS", "Swift", "соответствие нормам"]
+    },
+    features: {
+      en: [
+        "Comprehensive portfolio overview with visual dashboards",
+        "Building list monitoring and detailed property insights",
+        "Performance tracking with structured data reports",
+        "Approved parties management and compliance tracking",
+        "Clear visual reports for informed decision-making",
+        "Unified interface for streamlined portfolio management"
+      ],
+      ru: [
+        "Полный обзор портфеля с визуальными дашбордами",
+        "Мониторинг списка зданий и детальная аналитика объектов",
+        "Отслеживание эффективности с структурированными отчётами",
+        "Управление утверждёнными сторонами и отслеживание соответствия",
+        "Наглядные визуальные отчёты для принятия обоснованных решений",
+        "Единый интерфейс для оптимизированного управления портфелем"
+      ]
+    },
+    architectureHighlights: {
+      en: [
+        "Native iOS application built with Swift for optimal performance",
+        "Centralized data aggregation for real-time portfolio reporting",
+        "Structured dashboard architecture for multi-level data visualization"
+      ],
+      ru: [
+        "Нативное iOS-приложение на Swift для оптимальной производительности",
+        "Централизованная агрегация данных для отчётности по портфелю в реальном времени",
+        "Структурированная архитектура дашбордов для многоуровневой визуализации данных"
+      ]
+    },
+    metaTitle: {
+      en: "iEngie | Portfolio Dashboard & Building Management Platform",
+      ru: "iEngie | Дашборд портфеля и платформа управления зданиями"
+    },
+    metaDescription: {
+      en: "iEngie is a centralized dashboard reporting platform designed for comprehensive portfolio oversight. Monitor buildings, track performance insights, manage approved parties, and make data-driven decisions — all in one unified iOS interface.",
+      ru: "iEngie — это централизованная платформа отчётности с дашбордами для комплексного управления портфелем. Отслеживайте здания, анализируйте показатели эффективности, управляйте утверждёнными сторонами и принимайте решения на основе данных — всё в одном интерфейсе iOS."
+    }
+  },
+  {
     id: '1009',
     slug: "overwatch-social-streaming",
-    url: "",
+    url: "https://apps.apple.com/app/overwatch-social/id6749165413",
     image: "/assets/overwatch.png",
     title: {
       en: "OverWatch – Local Influencer Streaming",
