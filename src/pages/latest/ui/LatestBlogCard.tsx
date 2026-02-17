@@ -9,7 +9,7 @@ type TProps = {
   locale: string;
 };
 
-export const LatestBlogCard = ({ blogs }: TProps) => {
+export const LatestBlogCard = ({ blogs, locale }: TProps) => {
   const latestBlogs = useMemo(() => {
     return blogs
       .sort(
@@ -29,7 +29,7 @@ export const LatestBlogCard = ({ blogs }: TProps) => {
       {latestBlogs.map((blog, index) => (
         <a
           key={blog.id}
-          href={`/blog/${blog.slug}`}
+          href={`/${locale}/blogs/${blog.slug}`}
           className="
             group block
             text-sm md:text-base
